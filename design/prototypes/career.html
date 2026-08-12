@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Graphic Design | Tech Soul Discovery Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #15121b;
+            color: #e8dfee;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(22, 27, 34, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #d2bbff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .blueprint-card {
+            background: linear-gradient(165deg, rgba(34, 30, 40, 1) 0%, rgba(21, 18, 27, 1) 100%);
+            box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.2);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<!-- Shared Component Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-fixed": "#ffdcc6",
+                "surface-container-lowest": "#100d16",
+                "on-secondary-fixed": "#001f26",
+                "on-tertiary-container": "#ffe0cd",
+                "on-secondary-container": "#00424e",
+                "primary": "#d2bbff",
+                "on-primary-fixed": "#25005a",
+                "on-primary": "#3f008e",
+                "on-tertiary": "#4f2500",
+                "primary-fixed-dim": "#d2bbff",
+                "on-surface": "#e8dfee",
+                "surface-tint": "#d2bbff",
+                "surface-container-low": "#1d1a24",
+                "on-secondary": "#003640",
+                "on-primary-fixed-variant": "#5a00c6",
+                "secondary-container": "#03b5d3",
+                "secondary-fixed": "#acedff",
+                "on-tertiary-fixed": "#301400",
+                "surface-container-highest": "#37333e",
+                "secondary": "#4cd7f6",
+                "surface-dim": "#15121b",
+                "inverse-on-surface": "#332f39",
+                "surface-bright": "#3c3742",
+                "error-container": "#93000a",
+                "outline": "#958da1",
+                "on-error": "#690005",
+                "surface": "#15121b",
+                "secondary-fixed-dim": "#4cd7f6",
+                "tertiary": "#ffb784",
+                "error": "#ffb4ab",
+                "on-error-container": "#ffdad6",
+                "surface-variant": "#37333e",
+                "on-surface-variant": "#ccc3d8",
+                "tertiary-container": "#a15100",
+                "surface-container-high": "#2c2833",
+                "primary-container": "#7c3aed",
+                "on-background": "#e8dfee",
+                "background": "#15121b",
+                "inverse-primary": "#732ee4",
+                "surface-container": "#221e28",
+                "tertiary-fixed-dim": "#ffb784",
+                "on-primary-container": "#ede0ff",
+                "on-tertiary-fixed-variant": "#713700",
+                "primary-fixed": "#eaddff",
+                "outline-variant": "#4a4455",
+                "on-secondary-fixed-variant": "#004e5c",
+                "inverse-surface": "#e8dfee"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "2xl": "1rem",
+                "3xl": "1.5rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "container-max": "1280px",
+                "stack-sm": "12px",
+                "stack-lg": "48px",
+                "margin-mobile": "20px",
+                "gutter": "24px",
+                "unit": "8px",
+                "margin-desktop": "64px",
+                "stack-md": "24px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Hanken Grotesk"],
+                "label-md": ["Geist"],
+                "display-lg-mobile": ["Hanken Grotesk"],
+                "headline-md": ["Hanken Grotesk"],
+                "body-md": ["Inter"],
+                "mono-sm": ["Geist"],
+                "display-lg": ["Hanken Grotesk"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "mono-sm": ["12px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight cursor-pointer active:scale-95 transition-transform inline-block" href="index.html"><img alt="Tech Soul Logo" class="h-10 w-auto object-contain" src="images/tech_soul_logo.png"/></a>
+<div class="hidden md:flex gap-stack-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors text-label-md font-label-md" href="index.html">Discover</a>
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-md font-label-md" href="graphic-design.html">Industries</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors text-label-md font-label-md" href="build-blueprint.html">Blueprints</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors text-label-md font-label-md" href="software-photoshop.html">Software</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors text-label-md font-label-md" href="index.html#ai-tools">AI Tools</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors text-label-md font-label-md" href="starter-stack.html">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-on-surface transition-all">search</button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:opacity-80 transition-all active:scale-95" onclick="window.location.href='compare-photoshop-coreldraw.html'">Compare</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[70vh] flex flex-col justify-center items-center text-center px-margin-mobile overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
+<div class="absolute inset-0 z-0">
+</div>
+<div class="relative z-10 max-w-4xl mx-auto py-stack-lg">
+<span class="text-primary font-label-md text-label-md uppercase tracking-[0.2em] mb-4 block">Editorial Discovery</span>
+<h1 class="font-display-lg text-display-lg mb-6 leading-none">Become a Graphic Design</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                    Discover industry-leading software, AI tools, learning resources and curated Blueprints for graphic designers.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-bold text-lg hover:opacity-90 transition-all shadow-xl shadow-primary-container/20" onclick="window.location.href='build-blueprint.html'">Explore Blueprints</button>
+<button class="bg-white/5 border border-white/10 text-on-surface px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-md" onclick="window.location.href='software-photoshop.html'">Browse Software</button>
+</div>
+</div>
+</section>
+<!-- Category Stats -->
+<section class="px-margin-desktop max-w-container-max mx-auto -mt-20 relative z-20 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="glass-panel p-8 rounded-3xl text-center transform hover:-translate-y-2 transition-all">
+<div class="text-4xl font-display-lg text-primary mb-2">120+</div>
+<div class="text-on-surface-variant font-label-md uppercase tracking-wider">Software</div>
+</div>
+<div class="glass-panel p-8 rounded-3xl text-center transform hover:-translate-y-2 transition-all">
+<div class="text-4xl font-display-lg text-secondary mb-2">35</div>
+<div class="text-on-surface-variant font-label-md uppercase tracking-wider">AI Tools</div>
+</div>
+<div class="glass-panel p-8 rounded-3xl text-center transform hover:-translate-y-2 transition-all">
+<div class="text-4xl font-display-lg text-tertiary mb-2">18</div>
+<div class="text-on-surface-variant font-label-md uppercase tracking-wider">Blueprints</div>
+</div>
+<div class="glass-panel p-8 rounded-3xl text-center transform hover:-translate-y-2 transition-all">
+<div class="text-4xl font-display-lg text-white mb-2">250+</div>
+<div class="text-on-surface-variant font-label-md uppercase tracking-wider">Resources</div>
+</div>
+</div>
+</section>
+<!-- Featured Blueprint -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto transition-all duration-1000 opacity-100 translate-y-0">
+<div class="blueprint-card rounded-[3rem] overflow-hidden flex flex-col lg:flex-row items-center">
+<div class="p-12 lg:p-20 lg:w-1/2 space-y-8">
+<div class="flex items-center gap-3">
+<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-label-md font-bold uppercase tracking-widest">Mastery Path</span>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined fill text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">9.8</span>
+</div>
+</div>
+<h2 class="text-5xl lg:text-7xl font-display-lg tracking-tight">Graphic Designer Blueprint</h2>
+<p class="text-on-surface-variant text-xl leading-relaxed">
+                        The definitive guide to becoming a world-class graphic designer. From foundational principles to advanced mastery of the industry's powerful toolset.
+                    </p>
+<div class="flex items-center gap-10">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-sm uppercase tracking-tighter">Duration</span>
+<span class="text-2xl font-bold">8 Weeks</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-sm uppercase tracking-tighter">Level</span>
+<span class="text-2xl font-bold">Beginner to Pro</span>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container px-12 py-5 rounded-full font-bold text-xl hover:opacity-90 transition-all w-full md:w-auto" onclick="window.location.href='build-blueprint.html'">Get Started</button>
+</div>
+<div class="lg:w-1/2 h-[500px] lg:h-auto self-stretch relative">
+<img class="w-full h-full object-cover" data-alt="A highly detailed 3D composition of glowing, floating graphic design elements including abstract geometric shapes, a stylized stylus pen, and layers of digital canvas. The scene is illuminated with vibrant violet and cyan neon lights against a deep dark background, creating a high-end futuristic studio aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJT2wVJQNy31jVD7NAXEgJuatmTlU9eLPDEcJ44tkdeEKsOggmIoWJepCTHr-vR1Se-5KhETHQM-WLzNPpeIwyivCAr9WblApPYcy8LGv45Ld2BYkwliv33_BJOpaw4gobJGNP70_uZFkUYh42EmrZktatfvbpnZA6Qz9vMjKoXab-0nTTAzoqqJe06xJtzHyImyzVZTGl5uc4DTsQxJDuFMJB9MQhVZ1R7nIEgbw9O5IxRQVIJnZetw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 lg:bg-gradient-to-l lg:from-background via-transparent to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Top Software -->
+<section class="py-24 bg-surface-container-low/30 px-margin-desktop overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto mb-16">
+<h3 class="text-4xl font-headline-lg mb-4">The Creative Toolkit</h3>
+<p class="text-on-surface-variant max-w-2xl">The gold standard tools used by top-tier designers globally.</p>
+</div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-gutter">
+<!-- Photoshop -->
+<div class="group relative bg-surface-container rounded-3xl p-8 hover:bg-surface-container-high transition-all border border-white/5 flex flex-col justify-between h-full">
+<div>
+<div class="w-16 h-16 bg-[#001E36] rounded-2xl flex items-center justify-center mb-6 text-primary font-bold text-3xl">Ps</div>
+<h4 class="text-xl font-bold mb-1">Photoshop</h4>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-label-md">9.9 Score</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-all text-sm font-bold" onclick="window.location.href='software-photoshop.html'">View Details</button>
+</div>
+<!-- Illustrator -->
+<div class="group relative bg-surface-container rounded-3xl p-8 hover:bg-surface-container-high transition-all border border-white/5 flex flex-col justify-between h-full">
+<div>
+<div class="w-16 h-16 bg-[#330000] rounded-2xl flex items-center justify-center mb-6 text-[#FF9A00] font-bold text-3xl">Ai</div>
+<h4 class="text-xl font-bold mb-1">Illustrator</h4>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-label-md">9.7 Score</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-all text-sm font-bold" onclick="window.location.href='software-photoshop.html'">View Details</button>
+</div>
+<!-- CorelDRAW -->
+<div class="group relative bg-surface-container rounded-3xl p-8 hover:bg-surface-container-high transition-all border border-white/5 flex flex-col justify-between h-full">
+<div>
+<div class="w-16 h-16 bg-green-900/30 rounded-2xl flex items-center justify-center mb-6 text-green-400 font-bold text-3xl">Cd</div>
+<h4 class="text-xl font-bold mb-1">CorelDRAW</h4>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-label-md">9.2 Score</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-all text-sm font-bold" onclick="window.location.href='compare-photoshop-coreldraw.html'">View Details</button>
+</div>
+<!-- Affinity -->
+<div class="group relative bg-surface-container rounded-3xl p-8 hover:bg-surface-container-high transition-all border border-white/5 flex flex-col justify-between h-full">
+<div>
+<div class="w-16 h-16 bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 text-blue-400 font-bold text-3xl">Ad</div>
+<h4 class="text-xl font-bold mb-1">Affinity Designer</h4>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-label-md">9.5 Score</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-all text-sm font-bold" onclick="window.location.href='software-photoshop.html'">View Details</button>
+</div>
+<!-- Canva -->
+<div class="group relative bg-surface-container rounded-3xl p-8 hover:bg-surface-container-high transition-all border border-white/5 flex flex-col justify-between h-full">
+<div>
+<div class="w-16 h-16 bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6 text-purple-400 font-bold text-3xl">Ca</div>
+<h4 class="text-xl font-bold mb-1">Canva</h4>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-label-md">8.8 Score</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-all text-sm font-bold" onclick="window.location.href='software-photoshop.html'">View Details</button>
+</div>
+</div>
+</section>
+<!-- Popular AI Tools -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto transition-all duration-1000 opacity-100 translate-y-0">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h3 class="text-4xl font-headline-lg mb-4">The AI Revolution</h3>
+<p class="text-on-surface-variant max-w-2xl">Generative tools redefining the boundaries of visual creativity.</p>
+</div>
+<button class="hidden md:flex items-center gap-2 text-primary font-bold hover:underline transition-all">View All AI Tools <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Firefly -->
+<div class="group relative h-96 rounded-[2rem] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A lush, ethereal forest rendered in a dreamlike, hyper-realistic style. Vibrant bioluminescent flowers and floating particles are created with incredible detail, showcasing the generative power of modern AI imaging tools. Soft pink and purple lighting creates a magical, serene atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD88O-H7AHqrGqM9HVZTcy0amuK0v2LJ80TMzLkDPRbszUHY1entphBuRKD4bPAi3v-C4hGT5bR5RIu2Un4BFgJkRj83S2V1039u0nloCJn5i8WW3JuKQl83uAffVGWmUyengfnJFrdrADtO2todNheWomb9CV_lVzOEmuMGJ-Rrnp55dkVrr4Tf8gohxmhbHuTwpE5esznEOU_3TBagsk1x76n7cpUQh8v8K5pWyV4gz2uQG_D-pdl9A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<div class="text-white font-display-lg text-2xl">Adobe Firefly</div>
+<p class="text-white/70 text-sm">Generative Fill &amp; Text Effects</p>
+</div>
+</div>
+<!-- Midjourney -->
+<div class="group relative h-96 rounded-[2rem] overflow-hidden lg:col-span-2">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An ultra-detailed cinematic portrait of a cybernetic warrior wearing ornate obsidian armor with glowing gold circuits. The aesthetic is high-fashion meets dark sci-fi, with dramatic chiaroscuro lighting. Every texture from the metallic sheen to the subtle skin pores is rendered in stunning 8K resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzFED_mDN-cAeMXRQdn4l5UoNyUiNoQGbo_SzhjXVOC-nSht5ARaf4O9xPXjL5s3voeCsZhmnHHLouaWK9TlWBqsDMWI43LeJmA5uz6Ii_O4sG_zbsdkhhrvhmwrH_wJ4hu1ojfZgXd_sfwWUSUajplPzht8t_QVBCRw-SsLTRXckDWj1TvJGjbZc7k8VctGlxtlKy0DnkRAfweoplAiFWqrVQE4JDTB6GNFyue7X5z9_MdcDmDafadQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<div class="text-white font-display-lg text-2xl">Midjourney</div>
+<p class="text-white/70 text-sm">Advanced Prompt-to-Image Generation</p>
+</div>
+</div>
+<!-- ChatGPT (DALL-E) -->
+<div class="group relative h-96 rounded-[2rem] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist 3D rendering of an isometric workspace with floating tech gadgets and coffee cups, using a soft pastel color palette of mint green, lavender, and cream. The lighting is bright and cheerful, highlighting a clean, modern design aesthetic perfect for creative brainstorming." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRGqhz7OYhGt83ODwRaT7vFRwx6or6sQqzXIIyrocZN2p-odHeVoRImVKML67ilisZkpnRmT1pDmYLfyXsFYOOYhYOyQkeQwwP9z9ExV3GC0iwQdbGoNpvC3Q0StGWWvPvxlUEszpwfSmwq5DPHMjuqDReSXkZF9wN-wCWXbCRdcnJ_q6k5vr5kidKuNPepKyJiO8smbXJZVE9BHn7-70EkVjF2EmX9hc_a1YgL4dY8hXtJssLt11pHQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<div class="text-white font-display-lg text-2xl">ChatGPT Plus</div>
+<p class="text-white/70 text-sm">Design Ideation &amp; DALL-E 3</p>
+</div>
+</div>
+<!-- Runway -->
+<div class="group relative h-96 rounded-[2rem] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A surreal video frame of liquid chrome waves crashing against a shoreline made of colorful glass beads. The scene features high-contrast lighting with deep shadows and brilliant prismatic highlights, demonstrating the motion and fluid dynamics of advanced AI video generation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxS5tja3Fg80ee3VAh1-H33WRsCB_XuyqtLln7ZoB8FOuM30fVZM5Llx6UUYeyuEV0c8QmEM323NxGRYW8bryTnC6nayrJ8dd4o_emRQmXGwrotOSjsvH2Su1BpZjFNsAnP8rdjFzKoEVDevoFCZxh-GfRP-LgIUTrTCXTFIqsF8AQPVSzYZjKkuyFdahL741I99mAgqy11T3RhnTZihM5EoVNNRS8akLBnW2hhI5ZWhMCvQ3d7C_6-A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<div class="text-white font-display-lg text-2xl">Runway Gen-2</div>
+<p class="text-white/70 text-sm">Professional AI Video Suite</p>
+</div>
+</div>
+<!-- Leonardo -->
+<div class="group relative h-96 rounded-[2rem] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Stunning architectural visualization of a futuristic skyscraper made of living wood and twisting vines, set against a sunset sky. The rendering style is highly artistic, blending organic forms with sleek modern glass, showing a sophisticated AI-assisted creative vision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBccBmXGd5gsYKn7-6EdjIcvoUd0H-xK5pf5qGpxPRas-SavAaXO3iHwUCd0-_ULHI-D8K2ZATdQThmcG27eJEmok7Y3N8S05-LBZIJnV0WqEJnkCAIvBeC0D1WRtdg_Z6VzJMte5vN6-M_2KQNkbFC9THHAwHGkPBRkjVYTXhUsC0VKvsBqGeQngJ5rhG0PfS7v6et-0-R_QlGcIzuRQPwh2GbszPtGPw0H2WhAegILAvCXpwV_3R36Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<div class="text-white font-display-lg text-2xl">Leonardo AI</div>
+<p class="text-white/70 text-sm">Assets for Game Design &amp; Marketing</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Popular Comparisons -->
+<section class="py-24 bg-surface-container-lowest px-margin-desktop overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto mb-16">
+<h3 class="text-4xl font-headline-lg mb-4">Compare &amp; Decide</h3>
+<p class="text-on-surface-variant max-w-2xl">Head-to-head battles of the industry's titans.</p>
+</div>
+<div class="max-scroll-container flex gap-8 overflow-x-auto hide-scrollbar pb-10">
+<div class="min-w-[400px] bg-surface rounded-3xl p-10 border border-white/5 hover:border-primary/30 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between mb-10">
+<div class="w-16 h-16 bg-[#001E36] rounded-full flex items-center justify-center text-primary font-bold">Ps</div>
+<span class="text-on-surface-variant text-xl">vs</span>
+<div class="w-16 h-16 bg-green-900/30 rounded-full flex items-center justify-center text-green-400 font-bold">Cd</div>
+</div>
+<h4 class="text-2xl font-bold mb-4">Photoshop vs CorelDRAW</h4>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Which raster giant deserves your loyalty in 2024? We break down performance and tools.</p>
+<button class="text-primary font-bold flex items-center gap-2 group">Read Comparison <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span></button>
+</div>
+<div class="min-w-[400px] bg-surface rounded-3xl p-10 border border-white/5 hover:border-primary/30 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between mb-10">
+<div class="w-16 h-16 bg-[#330000] rounded-full flex items-center justify-center text-[#FF9A00] font-bold">Ai</div>
+<span class="text-on-surface-variant text-xl">vs</span>
+<div class="w-16 h-16 bg-[#101010] rounded-full flex items-center justify-center text-secondary font-bold">Fi</div>
+</div>
+<h4 class="text-2xl font-bold mb-4">Illustrator vs Figma</h4>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Vector precision vs cloud collaboration. Choosing the right tool for modern design systems.</p>
+<button class="text-primary font-bold flex items-center gap-2 group">Read Comparison <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span></button>
+</div>
+<div class="min-w-[400px] bg-surface rounded-3xl p-10 border border-white/5 hover:border-primary/30 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between mb-10">
+<div class="w-16 h-16 bg-[#001E36] rounded-full flex items-center justify-center text-primary font-bold">Ps</div>
+<span class="text-on-surface-variant text-xl">vs</span>
+<div class="w-16 h-16 bg-purple-900/30 rounded-full flex items-center justify-center text-purple-400 font-bold">Ca</div>
+</div>
+<h4 class="text-2xl font-bold mb-4">Photoshop vs Canva</h4>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Pro-grade control vs templated speed. Where do you draw the line for your brand?</p>
+<button class="text-primary font-bold flex items-center gap-2 group">Read Comparison <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span></button>
+</div>
+</div>
+</section>
+<!-- Learning Hub -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto transition-all duration-1000 opacity-100 translate-y-0">
+<h3 class="text-4xl font-headline-lg mb-16 text-center">Sharpen Your Skills</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group cursor-pointer">
+<div class="h-64 rounded-3xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="A clean and modern UI display of various typography styles on a minimalist white and gray background. Bold serif headlines and crisp sans-serif body text are showcased in a sophisticated editorial layout, emphasizing legibility and hierarchy in professional graphic design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7gIIPHjL1J0Q6kkPw6Ndm12Z7mzprPkDzte_zePkNoFJfNpimCIrdv_U067dxeC3lU5tTZFu4WcXei8ANjGPueaP4dvtemKwcoR5DLl4TcBfd8vev-_Mi2RHRDJ4uq9qaKYFrKmAEn5Z0EXWAuvgyn6UCWke2AErURVdetvu9g67YaJ7C4HszuKCaDUzwJJBSaLTJ1rT5rHdN84jiaQ6LNa8hXbzHK61BWC_ZqUBRspzGZBGfSASAeQ"/>
+</div>
+<span class="text-primary font-bold text-xs uppercase tracking-widest">Basics</span>
+<h5 class="text-xl font-bold mt-2 group-hover:text-primary transition-colors">Getting Started in Graphic Design</h5>
+</div>
+<div class="group cursor-pointer">
+<div class="h-64 rounded-3xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="A vibrant color wheel and abstract color splashes on a dark background, showcasing harmonious color theory. The scene features smooth transitions between warm oranges and cool blues, with a professional design-studio aesthetic that looks clean and mathematically precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgeI7WqIrFkVMmuHoKNf7o6a6DEbVWSwTf4CYexuKNBMnzcyRb68llbG3Gq41vqlMsNsmAYzwlswf3qK-KiDHGftpzwmRC2a_fTnS24eOH6nm2lOL4x3Ht4ucEwAPXXjvKFPOHuP3pJ3sDcY58IPuHKcTXmqoiwFqKK8n5nQZJE2ftKoZ2ohIiwcoYfdCxdNmn2HVqLh5K_bTXeYyDLtd2HjhKr-AcE-8MFnIqNSauP15iBaps0TEFPg"/>
+</div>
+<span class="text-primary font-bold text-xs uppercase tracking-widest">Principles</span>
+<h5 class="text-xl font-bold mt-2 group-hover:text-primary transition-colors">Color Theory Masterclass</h5>
+</div>
+<div class="group cursor-pointer">
+<div class="h-64 rounded-3xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Elegant close-up shots of high-quality typography and font pairings. Detailed serifs and modern geometric fonts are displayed in a minimal, high-contrast dark-mode interface, highlighting the emotional impact of different typefaces in branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-A_VESu8LuvpXNOjF-1MMuaASNLwqWRDV5dY1GIWv54OepJWNzTnoAkIDtWVlDaoUr2UA-GRpiq-Y0uF0EhbOQOEVrGs5EXGkzklCDPGwYKhVBNRhZWE4DyunxvGeUpyhn6Ht2h-7vsIesQ-KHJOwCW46J580yo170AyJEgQTlUgczk20AFM4LKfEnyCvw5Pa0xUXYJy8LgKvzzHw0dTUH6CQCRl0OFqbav_dqqxjE8irWRpIEgHBMg"/>
+</div>
+<span class="text-primary font-bold text-xs uppercase tracking-widest">Essentials</span>
+<h5 class="text-xl font-bold mt-2 group-hover:text-primary transition-colors">Typography Guide for 2024</h5>
+</div>
+<div class="group cursor-pointer">
+<div class="h-64 rounded-3xl overflow-hidden mb-6">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="A professional portfolio layout displayed on a high-resolution tablet screen, surrounded by a clean workspace. The portfolio showcases diverse graphic design projects like logos and posters with a sophisticated presentation style, set in a bright, modern office atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvLv-ADnUqb4rix2u30ldzF_iwCcRQmjrLxMl0Y4uQNnm97ucxUKjN5xKGox583daeJ9Ii_pBD0di8K53y6lwCn1TZPxcFJffEFou3pcp8p8yILNjDXBFxVMJb3WF4bNSdeQRdhSKAYOBn4O3IQMiUnkgMrjFQnTxGh-LmUfmUHCqNe5JDl05mB8au-9yXyGpvalu9yWomrg2t-FWWZ4ts6c_7B7p-cvMhW2gonyOwgAr0FAxbucLIYA"/>
+</div>
+<span class="text-primary font-bold text-xs uppercase tracking-widest">Career</span>
+<h5 class="text-xl font-bold mt-2 group-hover:text-primary transition-colors">Portfolio Tips for New Designers</h5>
+</div>
+</div>
+</section>
+<!-- Creator Paths -->
+<section class="py-24 bg-surface-container-low px-margin-desktop transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto text-center mb-16">
+<h3 class="text-4xl font-headline-lg mb-4">Choose Your Path</h3>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Specialized career tracks with curated resources for every creative niche.</p>
+</div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Logo Designer -->
+<div class="glass-panel p-10 rounded-[2.5rem] border-t-2 border-primary/30 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-5xl text-primary">draw</span>
+</div>
+<h4 class="text-2xl font-bold mb-4">Logo Designer</h4>
+<p class="text-on-surface-variant mb-10">Master the art of creating iconic symbols that represent global brands.</p>
+<button class="w-full bg-white/5 border border-white/10 py-4 rounded-2xl hover:bg-white/10 transition-all font-bold" onclick="window.location.href='build-blueprint.html'">Start Path</button>
+</div>
+<!-- Brand Designer -->
+<div class="glass-panel p-10 rounded-[2.5rem] border-t-2 border-secondary/30 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-secondary/10 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-5xl text-secondary">collections</span>
+</div>
+<h4 class="text-2xl font-bold mb-4">Brand Designer</h4>
+<p class="text-on-surface-variant mb-10">Go beyond the logo. Learn to build complete visual identities and systems.</p>
+<button class="w-full bg-white/5 border border-white/10 py-4 rounded-2xl hover:bg-white/10 transition-all font-bold" onclick="window.location.href='build-blueprint.html'">Start Path</button>
+</div>
+<!-- Social Media Designer -->
+<div class="glass-panel p-10 rounded-[2.5rem] border-t-2 border-tertiary/30 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-tertiary/10 flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-5xl text-tertiary">celebration</span>
+</div>
+<h4 class="text-2xl font-bold mb-4">Social Media Designer</h4>
+<p class="text-on-surface-variant mb-10">Create high-impact content for digital audiences across all platforms.</p>
+<button class="w-full bg-white/5 border border-white/10 py-4 rounded-2xl hover:bg-white/10 transition-all font-bold" onclick="window.location.href='build-blueprint.html'">Start Path</button>
+</div>
+</div>
+</section>
+<!-- Trending & Community Picks -->
+<section class="py-24 px-margin-desktop overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto mb-16">
+<h3 class="text-4xl font-headline-lg mb-4">Trending Now</h3>
+<p class="text-on-surface-variant max-w-2xl">Community-voted favorites and editor's top picks.</p>
+</div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Award 1 -->
+<div class="bg-gradient-to-br from-primary/10 to-transparent p-10 rounded-[2rem] border border-primary/20 flex gap-8 items-center">
+<div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-5xl text-on-primary" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div>
+<span class="text-primary font-bold text-xs uppercase tracking-widest">2024 Winner</span>
+<h4 class="text-2xl font-bold mb-2">Editor's Choice: Procreate</h4>
+<p class="text-on-surface-variant text-sm">Recognized for its unmatched drawing experience and intuitive iPad interface.</p>
+</div>
+</div>
+<!-- Award 2 -->
+<div class="bg-gradient-to-br from-secondary/10 to-transparent p-10 rounded-[2rem] border border-secondary/20 flex gap-8 items-center">
+<div class="w-24 h-24 bg-secondary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-5xl text-on-secondary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div>
+<span class="text-secondary font-bold text-xs uppercase tracking-widest">Community Choice</span>
+<h4 class="text-2xl font-bold mb-2">Best Free Tool: Inkscape</h4>
+<p class="text-on-surface-variant text-sm">Voted #1 for powerful vector editing without the subscription price tag.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Explore Other Categories -->
+<section class="py-24 bg-surface-container-low px-margin-desktop transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-container-max mx-auto mb-16">
+<h3 class="text-4xl font-headline-lg mb-4">Explore More</h3>
+<p class="text-on-surface-variant max-w-2xl">Broaden your horizons with other creative industries.</p>
+</div>
+<div class="max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="group cursor-pointer">
+<div class="h-48 rounded-2xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A professional video editing interface on a large dual-monitor setup in a dimly lit studio. The timeline is filled with colorful video clips, and high-end audio equipment is visible on the desk, creating a mood of professional cinema post-production." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAET1AyeSjEBgvhCSh1CkXSm7kEoMTUk8yFtYSWmhoBLgJMMGlit3tm74k_t_QtlzEawWALK4iS5D0YVKm8brVTYn6het4084k1fV5Zn5NLrnDQJihhxzWzD5QTcYh82sx8LE6JqkDYgbXzOsoDhvz507bUBMZwKDr8Qv-eZ-z9tQ91vcojc81PLeXIuh3oIYSiJASWtq7e226GuWPdWLCK8Y472xdMej05Uh_n7o3-tWFDJ6j5pR2E1g"/>
+</div>
+<h5 class="text-lg font-bold group-hover:text-primary transition-all">Video Editing</h5>
+</div>
+<div class="group cursor-pointer">
+<div class="h-48 rounded-2xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A clean UI UX design workstation featuring a MacBook and an external monitor showing a complex app interface wireframe. The aesthetic is extremely minimal, with a neutral white and gray color palette and soft natural light from a window." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQCnm95MaBoKBoMGctYzl18Jxz_SAQYFDSQbj4kIHQg0gqFlOefw6dCXLZF9yhKhXv2CGQARGNft_lV6aXspmzmTOc88fsrl9s7vSm3rVEb-u0sUIcOqhV0A3GLFk_PIYKjRaFSX9vnTQJqcVczZ3nq4Y08pn3xxUeyUReXb6nHX0GCHSCKJgedA80_e-2crCqU6gCNKhbGWdsdkdLi7CfqTwkzrY5McCFq5Dmdnvu_8TPgCccN-E2jg"/>
+</div>
+<h5 class="text-lg font-bold group-hover:text-primary transition-all">UI UX Design</h5>
+</div>
+<div class="group cursor-pointer">
+<div class="h-48 rounded-2xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A detailed 3D modeling scene on a high-performance computer screen, showing a complex character sculpture in a digital workshop. Tools and brush panels are visible, with a cool blue ambient lighting illuminating the hardware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuwsdcLd07GKAUKq4knXza8whI8bD8P0o88D23OkALZwY9va4oezdniy7w5aZ67bLJFjlIYEmvl73ZjOi_1pcAjuH18D4wpp3Ehn-X9n4qfXgidgCkwVbOF_dQEFlEMw5aaO-s3QcFVqw-lyDTn1-wTopCXI7c6mVpuSXWvcuuRVTqJzUESu18jwtlFykbO7HxUlIm3WQw3AjklDC9pH_pHJ4cNh9focP3lPIW9zGNPm5GmDF5czn_2Q"/>
+</div>
+<h5 class="text-lg font-bold group-hover:text-primary transition-all">3D &amp; Animation</h5>
+</div>
+<div class="group cursor-pointer">
+<div class="h-48 rounded-2xl overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" data-alt="A high-end photography studio setup with professional cameras, studio lights, and a model on a cyclorama wall. The lighting is crisp and editorial, highlighting the premium nature of professional commercial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJtCVNEScKA2cjfZ9iQb2-K-jFwMUzohI9VQGFGgF9NeuUltAI3Ky73cCnAeHsswE-OX-pawgFhChUA_Ri3VNXGpvXQu26g9P3O8SqwYBjUcOkQSmIW78-E3DtkES4Giqbmt4KOvM3oLIjugcQrQZM09UvLSfTzkHAK_PTpKrbmv3WUm1qJ6_U1RMuxDKDh2R0u6p8xAnGV__kpn6WnQYFgRb3PCBX9EMLq5Ri_6lJUDvTXXEcp4c9Bw"/>
+</div>
+<h5 class="text-lg font-bold group-hover:text-primary transition-all">Photography</h5>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-margin-desktop relative overflow-hidden text-center transition-all duration-1000 opacity-100 translate-y-0">
+<div class="relative z-10 max-w-4xl mx-auto">
+<h2 class="text-5xl lg:text-7xl font-display-lg mb-8">Ready to build your creative career?</h2>
+<button class="bg-primary-container text-on-primary-container px-16 py-6 rounded-full font-bold text-2xl hover:opacity-90 transition-all shadow-2xl shadow-primary-container/30" onclick="window.location.href='build-blueprint.html'">Explore Blueprint</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-dim dark:bg-surface-dim border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight cursor-pointer active:scale-95 transition-transform inline-block" href="index.html"><img alt="Tech Soul Logo" class="h-10 w-auto object-contain" src="images/tech_soul_logo.png"/></a>
+<div class="flex gap-8 mb-8 md:mb-0">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-label-md font-label-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-label-md font-label-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-label-md font-label-md" href="#">Cookie Settings</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-label-md font-label-md" href="#">Contact</a>
+</div>
+<div class="text-on-surface-variant text-body-md font-body-md">
+                &copy; 2024 Tech Soul. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and subtle scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Apply fade-in to major sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

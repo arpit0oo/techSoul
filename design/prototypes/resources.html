@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Graphic Designer Starter Stack | Tech Soul</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "secondary-fixed-dim": "#4cd7f6",
+                "on-tertiary-container": "#ffe0cd",
+                "on-tertiary-fixed-variant": "#713700",
+                "on-primary-fixed-variant": "#5a00c6",
+                "surface": "#15121b",
+                "outline": "#958da1",
+                "on-secondary-fixed-variant": "#004e5c",
+                "on-secondary-fixed": "#001f26",
+                "on-error-container": "#ffdad6",
+                "background": "#15121b",
+                "on-surface": "#e8dfee",
+                "on-surface-variant": "#ccc3d8",
+                "on-secondary-container": "#00424e",
+                "surface-tint": "#d2bbff",
+                "on-primary": "#3f008e",
+                "surface-container-high": "#2c2833",
+                "inverse-primary": "#732ee4",
+                "surface-dim": "#15121b",
+                "surface-variant": "#37333e",
+                "primary-fixed-dim": "#d2bbff",
+                "on-background": "#e8dfee",
+                "on-tertiary-fixed": "#301400",
+                "outline-variant": "#4a4455",
+                "surface-container-highest": "#37333e",
+                "secondary-fixed": "#acedff",
+                "error-container": "#93000a",
+                "surface-container-lowest": "#100d16",
+                "surface-bright": "#3c3742",
+                "on-primary-fixed": "#25005a",
+                "surface-container-low": "#1d1a24",
+                "tertiary": "#ffb784",
+                "primary-container": "#7c3aed",
+                "on-secondary": "#003640",
+                "on-tertiary": "#4f2500",
+                "secondary": "#4cd7f6",
+                "on-error": "#690005",
+                "tertiary-fixed": "#ffdcc6",
+                "tertiary-container": "#a15100",
+                "on-primary-container": "#ede0ff",
+                "secondary-container": "#03b5d3",
+                "surface-container": "#221e28",
+                "primary-fixed": "#eaddff",
+                "tertiary-fixed-dim": "#ffb784",
+                "inverse-on-surface": "#332f39",
+                "error": "#ffb4ab",
+                "inverse-surface": "#e8dfee",
+                "primary": "#d2bbff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "unit": "8px",
+                "stack-sm": "12px",
+                "gutter": "24px",
+                "stack-lg": "48px",
+                "container-max": "1280px",
+                "stack-md": "24px",
+                "margin-mobile": "20px",
+                "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                "display-lg": ["Hanken Grotesk"],
+                "body-md": ["Inter"],
+                "headline-lg": ["Hanken Grotesk"],
+                "mono-sm": ["Geist"],
+                "headline-md": ["Hanken Grotesk"],
+                "display-lg-mobile": ["Hanken Grotesk"],
+                "label-md": ["Geist"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "mono-sm": ["12px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+      body {
+        background-color: #0D1117;
+        color: #e8dfee;
+      }
+      .glass {
+        background: rgba(22, 27, 34, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .card-hover:hover {
+        transform: scale(1.02);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #7C3AED 0%, #d2bbff 100%);
+      }
+      .primary-shadow {
+        box-shadow: 0 10px 40px -10px rgba(124, 58, 237, 0.4);
+      }
+      .step-line::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #7c3aed33, transparent);
+        z-index: -1;
+      }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full bg-surface/70 backdrop-blur-xl border-b border-white/5 z-50 shadow-primary/20 shadow-xl transition-all duration-300">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight cursor-pointer active:scale-95 transition-transform inline-block" href="index.html"><img alt="Tech Soul Logo" class="h-10 w-auto object-contain" src="images/tech_soul_logo.png"/></a>
+<div class="hidden md:flex gap-8 items-center"><a class="text-on-surface-variant hover:text-on-surface transition-all font-body-md" href="index.html">Discover</a><a class="text-on-surface-variant hover:text-on-surface transition-all font-body-md" href="graphic-design.html">Industries</a><a class="text-on-surface-variant hover:text-on-surface transition-all font-body-md" href="build-blueprint.html">Blueprints</a><a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md" href="software-photoshop.html">Software</a><a class="text-on-surface-variant hover:text-on-surface transition-all font-body-md" href="index.html#ai-tools">AI Tools</a><a class="text-on-surface-variant hover:text-on-surface transition-all font-body-md" href="compare-photoshop-coreldraw.html">Compare</a><a class="text-on-surface-variant hover:text-on-surface transition-all font-body-md" href="starter-stack.html">Resources</a></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform">search</span>
+<button class="md:hidden material-symbols-outlined text-on-surface">menu</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="text-center md:text-left grid md:grid-cols-2 items-center gap-12">
+<div class="space-y-6">
+<div class="flex flex-wrap gap-3 justify-center md:justify-start">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-mono-sm text-mono-sm">Beginner Friendly</span>
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20 font-mono-sm text-mono-sm">Industry Standard</span>
+<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20 font-mono-sm text-mono-sm">Professionally Curated</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg">Graphic Designer <span class="text-primary">Starter Stack</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Everything you need to start your graphic design journey. A meticulously curated ecosystem of tools designed to take you from hobbyist to professional.</p>
+<div class="pt-4">
+<button class="primary-gradient primary-shadow px-8 py-4 rounded-xl text-white font-bold text-body-lg hover:scale-105 transition-transform active:scale-95">Explore Every Tool</button>
+</div>
+</div>
+<div class="relative flex justify-center items-center h-[400px]">
+<div class="absolute w-full h-full bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="relative z-10 glass p-8 rounded-3xl w-full max-w-md border border-white/10 shadow-2xl rotate-3">
+<div class="grid grid-cols-3 gap-4">
+<div class="aspect-square glass rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-4xl text-primary">brush</span></div>
+<div class="aspect-square glass rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-4xl text-secondary">layers</span></div>
+<div class="aspect-square glass rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-4xl text-tertiary">text_fields</span></div>
+<div class="aspect-square glass rounded-2xl flex items-center justify-center col-span-2 bg-primary/5"><span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings: 'FILL' 1;">pentagon</span></div>
+<div class="aspect-square glass rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-4xl text-on-surface-variant">palette</span></div>
+</div>
+<div class="mt-8 h-4 w-2/3 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Stack Overview Roadmap -->
+<section class="py-stack-lg bg-surface-container-low/50">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-16">The <span class="text-secondary">Professional</span> Workflow</h2>
+<div class="flex flex-wrap justify-center gap-6 md:gap-4 items-center">
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 glass rounded-2xl flex items-center justify-center border-primary/40"><span class="material-symbols-outlined text-primary">photo_camera</span></div>
+<span class="font-label-md text-label-md">Photoshop</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/30 hidden md:block">arrow_forward</span>
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 glass rounded-2xl flex items-center justify-center border-secondary/40"><span class="material-symbols-outlined text-secondary">gesture</span></div>
+<span class="font-label-md text-label-md">Illustrator</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/30 hidden md:block">arrow_forward</span>
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 glass rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-tertiary">format_size</span></div>
+<span class="font-label-md text-label-md">Adobe Fonts</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/30 hidden md:block">arrow_forward</span>
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 glass rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-primary">palette</span></div>
+<span class="font-label-md text-label-md">Coolors</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/30 hidden md:block">arrow_forward</span>
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 glass rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-secondary">image_not_supported</span></div>
+<span class="font-label-md text-label-md">Remove.bg</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/30 hidden md:block">arrow_forward</span>
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 glass rounded-2xl flex items-center justify-center border-primary/40"><span class="material-symbols-outlined text-primary">work</span></div>
+<span class="font-label-md text-label-md">Behance</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tool Cards Grid -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg">Core Toolset</h2>
+<p class="text-on-surface-variant">The heavy hitters of your creative laboratory.</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Photoshop -->
+<div class="glass p-6 rounded-3xl card-hover transition-all duration-300 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-[#001E36] rounded-xl flex items-center justify-center text-[#31A8FF] font-bold text-2xl">Ps</div>
+<div class="text-right">
+<div class="text-primary font-bold text-xl">9.9</div>
+<div class="text-[10px] uppercase tracking-wider text-on-surface-variant font-mono-sm">Tech Soul Score</div>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Photoshop</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">The industry standard for raster image manipulation, photo retouching, and complex digital painting.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-[10px] font-mono-sm uppercase">Essential</span>
+<span class="px-2 py-1 rounded bg-surface-container-highest text-on-surface-variant text-[10px] font-mono-sm uppercase">Industry Standard</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6 border-t border-white/5 pt-6">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase font-mono-sm">Difficulty</div>
+<div class="text-sm font-semibold">Intermediate</div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase font-mono-sm">Price</div>
+<div class="text-sm font-semibold">$20.99/mo</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border border-white/10 font-bold hover:bg-white/5 transition-colors">View Details</button>
+</div>
+<!-- Illustrator -->
+<div class="glass p-6 rounded-3xl card-hover transition-all duration-300 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-[#330000] rounded-xl flex items-center justify-center text-[#FF9A00] font-bold text-2xl">Ai</div>
+<div class="text-right">
+<div class="text-primary font-bold text-xl">9.8</div>
+<div class="text-[10px] uppercase tracking-wider text-on-surface-variant font-mono-sm">Tech Soul Score</div>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Illustrator</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Professional vector-based software for logos, icons, and complex illustrations that scale infinitely.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 rounded bg-secondary/10 text-secondary text-[10px] font-mono-sm uppercase">Essential</span>
+<span class="px-2 py-1 rounded bg-surface-container-highest text-on-surface-variant text-[10px] font-mono-sm uppercase">Vector Kings</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6 border-t border-white/5 pt-6">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase font-mono-sm">Difficulty</div>
+<div class="text-sm font-semibold">Intermediate</div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase font-mono-sm">Price</div>
+<div class="text-sm font-semibold">$20.99/mo</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border border-white/10 font-bold hover:bg-white/5 transition-colors">View Details</button>
+</div>
+<!-- Remove.bg -->
+<div class="glass p-6 rounded-3xl card-hover transition-all duration-300 flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-surface-container-highest rounded-xl flex items-center justify-center text-primary"><span class="material-symbols-outlined text-4xl">auto_fix_high</span></div>
+<div class="text-right">
+<div class="text-primary font-bold text-xl">9.4</div>
+<div class="text-[10px] uppercase tracking-wider text-on-surface-variant font-mono-sm">Tech Soul Score</div>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Remove.bg</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Instant AI-powered background removal to speed up your asset preparation workflow.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 rounded bg-tertiary/10 text-tertiary text-[10px] font-mono-sm uppercase">AI Powered</span>
+<span class="px-2 py-1 rounded bg-surface-container-highest text-on-surface-variant text-[10px] font-mono-sm uppercase">Time Saver</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6 border-t border-white/5 pt-6">
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase font-mono-sm">Difficulty</div>
+<div class="text-sm font-semibold">Beginner</div>
+</div>
+<div>
+<div class="text-[10px] text-on-surface-variant uppercase font-mono-sm">Price</div>
+<div class="text-sm font-semibold">Free / Paid</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border border-white/10 font-bold hover:bg-white/5 transition-colors">View Details</button>
+</div>
+</div>
+</section>
+<!-- Workflow Explanation Timeline -->
+<section class="py-stack-lg relative overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">The 6-Step <span class="text-primary">Mastery</span> Flow</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 relative z-10">
+<div class="flex flex-col items-center text-center space-y-4 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center border-2 border-primary/20 group-hover:border-primary transition-colors text-primary font-bold text-xl">1</div>
+<h4 class="font-headline-sm text-headline-sm">Create</h4>
+<p class="text-sm text-on-surface-variant">Design vectors in Illustrator.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center border-2 border-primary/20 group-hover:border-primary transition-colors text-primary font-bold text-xl">2</div>
+<h4 class="font-headline-sm text-headline-sm">Refine</h4>
+<p class="text-sm text-on-surface-variant">Edit assets in Photoshop.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center border-2 border-primary/20 group-hover:border-primary transition-colors text-primary font-bold text-xl">3</div>
+<h4 class="font-headline-sm text-headline-sm">Color</h4>
+<p class="text-sm text-on-surface-variant">Generate Coolors palettes.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center border-2 border-primary/20 group-hover:border-primary transition-colors text-primary font-bold text-xl">4</div>
+<h4 class="font-headline-sm text-headline-sm">Isolate</h4>
+<p class="text-sm text-on-surface-variant">Remove backgrounds instantly.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center border-2 border-primary/20 group-hover:border-primary transition-colors text-primary font-bold text-xl">5</div>
+<h4 class="font-headline-sm text-headline-sm">Type</h4>
+<p class="text-sm text-on-surface-variant">Sync pro fonts via Adobe.</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center border-2 border-primary/20 group-hover:border-primary transition-colors text-primary font-bold text-xl">6</div>
+<h4 class="font-headline-sm text-headline-sm">Launch</h4>
+<p class="text-sm text-on-surface-variant">Publish to Behance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why This Stack Bento Grid -->
+<section class="py-stack-lg bg-surface-container-lowest">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg mb-12">Why This Stack?</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<div class="md:col-span-2 lg:col-span-3 glass p-8 rounded-3xl flex flex-col justify-end min-h-[300px] border-primary/20">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h3 class="font-headline-md text-headline-md mb-2">Save Hundreds of Hours</h3>
+<p class="text-on-surface-variant">Eliminate the trial and error of finding tools that work together. This stack is pre-integrated for maximum efficiency.</p>
+</div>
+<div class="md:col-span-2 lg:col-span-3 glass p-8 rounded-3xl flex flex-col justify-end min-h-[300px] border-secondary/20">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" style="font-variation-settings: 'FILL' 1;">star</span>
+<h3 class="font-headline-md text-headline-md mb-2">Industry Workflow</h3>
+<p class="text-on-surface-variant">Learn the tools the pros use. Mastering these means you're ready for any agency or freelance role in the world.</p>
+</div>
+<div class="md:col-span-2 lg:col-span-2 glass p-8 rounded-3xl flex flex-col justify-center text-center">
+<h4 class="text-4xl font-bold text-white mb-2">90%</h4>
+<p class="text-on-surface-variant font-mono-sm uppercase">Beginner Success Rate</p>
+</div>
+<div class="md:col-span-2 lg:col-span-2 glass p-8 rounded-3xl flex flex-col justify-center text-center">
+<h4 class="text-4xl font-bold text-white mb-2">Future</h4>
+<p class="text-on-surface-variant font-mono-sm uppercase">Proof Skills</p>
+</div>
+<div class="md:col-span-4 lg:col-span-2 glass p-8 rounded-3xl flex flex-col justify-center text-center">
+<h4 class="text-4xl font-bold text-white mb-2">Trusted</h4>
+<p class="text-on-surface-variant font-mono-sm uppercase">By 50k+ Designers</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stack Score & Details -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="glass p-12 rounded-[3rem] text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 -z-10"></div>
+<div class="text-[120px] font-black leading-none text-white tracking-tighter mb-4">9.8</div>
+<div class="text-primary font-bold text-xl uppercase tracking-[0.2em]">Overall Tech Soul Score</div>
+<p class="text-on-surface-variant mt-6 max-w-sm mx-auto">This score reflects the balance between tool power, accessibility, and market demand for these specific skills.</p>
+</div>
+<div class="space-y-8">
+<h2 class="font-headline-lg text-headline-lg">Performance Metrics</h2>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Learning Curve (Beginner Friendly)</span>
+<span class="font-mono-sm text-primary">85%</span>
+</div>
+<div class="h-2 bg-white/5 rounded-full"><div class="h-full bg-primary rounded-full w-[85%]"></div></div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Career Value</span>
+<span class="font-mono-sm text-secondary">98%</span>
+</div>
+<div class="h-2 bg-white/5 rounded-full"><div class="h-full bg-secondary rounded-full w-[98%]"></div></div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Budget Friendliness</span>
+<span class="font-mono-sm text-tertiary">70%</span>
+</div>
+<div class="h-2 bg-white/5 rounded-full"><div class="h-full bg-tertiary rounded-full w-[70%]"></div></div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md">Professional Adoption</span>
+<span class="font-mono-sm text-primary">100%</span>
+</div>
+<div class="h-2 bg-white/5 rounded-full"><div class="h-full bg-primary rounded-full w-[100%]"></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Who Should Use This Stack -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass p-8 rounded-3xl border-l-4 border-l-secondary">
+<h3 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+                    Perfect For
+                </h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Students</li>
+<li class="flex items-center gap-3 text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Freelancers</li>
+<li class="flex items-center gap-3 text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Graphic Designers</li>
+<li class="flex items-center gap-3 text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Printing Shops</li>
+<li class="flex items-center gap-3 text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Content Creators</li>
+</ul>
+</div>
+<div class="glass p-8 rounded-3xl border-l-4 border-l-error">
+<h3 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-error">cancel</span>
+                    Not Ideal For
+                </h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-error/40"></span> Architects (Use CAD Stack)</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-error/40"></span> Mechanical Designers</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-error/40"></span> Video Editors (Use Motion Stack)</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Alternative Stacks -->
+<section class="py-stack-lg bg-surface-container-low">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg mb-12">More Professional Stacks</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group relative overflow-hidden rounded-3xl aspect-[4/3] cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A clean top-down view of a modern workstation featuring a 3D printer, specialized design software on a large monitor, and high-quality printed paper samples. The lighting is bright and industrial, emphasizing a professional printing shop environment with a deep purple and teal color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqBOuoKHqbDSwUlom2bzdoFt_SgFPWKcG0Er0QKDrclLgDw4ynSlN7DEHCWT2t56XNynLwPIpzC7CeEnJAR0QknkriiCQLrWQE59Vwyj6yCadMjHOYfGz7IM0Rv3sztZEWNX7MmN-X3BvPIXMOgYnKoPI2Inac4gslbiMZEa--jab6jjQE0NyTL1sVk7IS2NcOUvtj-W9zlfWeSe9CVK5asQBU-crZFTrmSNhDNeSPlSjCnhCoaqA8WQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h4 class="font-headline-md text-headline-md">Printing Shop Stack</h4>
+<p class="text-sm text-on-surface-variant">Optimized for production.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-3xl aspect-[4/3] cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A futuristic workspace with multiple screens displaying complex UI/UX wireframes, colorful prototypes, and design system components. The atmosphere is high-tech and sleek, with soft violet ambient lighting and a professional Apple-inspired minimalist aesthetic. Soft focus on a high-end designer mouse and keyboard." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkl_dIsGadFkesuEDUOmZR6lPV73RL7C1pdKEwryPqykqRlgzfsqtimlJrcGbh9RixghWQWlBJynfGVCjb9n8Lg7dMgV2EYE2nK__IVO9S_h1MVrVVEA8IWBIIu6AFxOzfKpMnXKRWYwaMQF_Y6sgy6qlo7d8V3fmR4AfaXZFxMoEACpqkXpc3viwmPh4A73ht_tjBWcvyVlekxNGBQUArM4ftylyQuSVazpUpkDq7tnpeAF-HNVZFmQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h4 class="font-headline-md text-headline-md">UI UX Designer Stack</h4>
+<p class="text-sm text-on-surface-variant">The digital architect's kit.</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-3xl aspect-[4/3] cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="An artistic workspace showing a digital drawing tablet with a logo in progress. Sketches are scattered around, and the screen shows sophisticated vector editing software. The lighting is warm and creative, with vibrant violet and cyan accents highlighting the craft of logo design. Premium, sharp, and focused visual style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCKB7Z_ER1OUMkJglRmxtV7LmNfCSjtQeHlLNdI-jIj_pY2VDhcZC3Nb6O68X5REf9sQ7BE10ZGLeIo-WOrbz0yLXY5oaLzOGk1cH5u7aZn2B9QMGFWTrCdIXk5xRSImORtRkX9GdiIVroGyC_7XdqfudlYpYwLifCelVJmF-4P_Gt2Mihq_ei53GCXl0adWnDUnobAfz4HWFqDYc_UiMohZn8-YFVng7JKpWz9ISDR4Y7Fyp9G_b5dpw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h4 class="font-headline-md text-headline-md">Logo Designer Stack</h4>
+<p class="text-sm text-on-surface-variant">Branding essentials.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 relative overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center space-y-8">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg">Ready to build your <span class="text-primary">creative setup?</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Explore every software in this stack and get exclusive Tech Soul guides on how to master them together.</p>
+<div class="pt-6">
+<button class="primary-gradient primary-shadow px-12 py-5 rounded-2xl text-white font-extrabold text-xl hover:scale-105 transition-transform active:scale-95">Explore Complete Stack</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-white/5 py-stack-lg">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-center md:text-left">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mb-2">Tech Soul</div>
+<p class="text-on-surface-variant text-sm">Empowering creators with the world's best software insights.</p>
+</div>
+<div class="flex gap-8"><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="index.html">Discover</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="graphic-design.html">Industries</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="build-blueprint.html">Blueprints</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="software-photoshop.html">Software</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="index.html#ai-tools">AI Tools</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="compare-photoshop-coreldraw.html">Compare</a><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="starter-stack.html">Resources</a></div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+</div>
+</div>
+<div class="text-center mt-12 text-on-surface-variant/40 text-[10px] font-mono-sm uppercase tracking-widest">
+        &copy; 2024 Tech Soul. All rights reserved.
+      </div>
+</footer>
+<script>
+      // Add small interactive script for cards
+      document.querySelectorAll('.card-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.boxShadow = '0 0 30px rgba(124, 58, 237, 0.15)';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.boxShadow = 'none';
+        });
+      });
+    </script>
+</body></html>
