@@ -1,0 +1,234 @@
+---
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tech Soul | Career Path Blueprint</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500&family=Geist:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #15121b;
+            color: #e8dfee;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(22, 27, 34, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(210, 187, 255, 0.3);
+            background: rgba(34, 30, 40, 0.8);
+            transform: translateY(-4px);
+        }
+        .glass-card.active {
+            border-color: #d2bbff;
+            background: rgba(124, 58, 237, 0.1);
+            box-shadow: 0 0 40px rgba(124, 58, 237, 0.15);
+        }
+        .option-icon {
+            transition: transform 0.4s ease;
+        }
+        .glass-card:hover .option-icon {
+            transform: scale(1.1);
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #7c3aed 0%, #4cd7f6 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover:not(:disabled) {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+        }
+        .btn-gradient:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+        .progress-indicator {
+            transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+</style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md overflow-x-hidden bg-background text-on-surface">
+
+    <header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/5">
+        <Navbar />
+        <div class="progress-indicator bg-primary h-0.5 w-[20%]" id="progressBar"></div>
+    </header>
+
+    <!-- Main Content Shell -->
+    <main class="flex-grow flex flex-col pt-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full mb-stack-lg">
+        <!-- Header Section -->
+        <div class="flex flex-col mb-stack-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <span class="text-primary font-label-md text-label-md mb-2 uppercase tracking-widest">Step 1 of 5</span>
+            <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">What do you want to become?</h1>
+            <p class="text-on-surface-variant font-body-lg text-body-lg max-w-2xl">Select your dream career path to tailor your Tech Soul experience. We'll curate tools, resources, and insights specifically for your journey.</p>
+        </div>
+
+        <!-- Bento Grid Options -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter" id="optionsGrid">
+            <!-- Graphic Designer -->
+            <button class="glass-card p-stack-md flex flex-col items-start text-left rounded-xl group relative overflow-hidden" data-id="graphic-designer" onclick="selectOption(this)" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);">
+                <div class="mb-6 p-4 rounded-lg bg-primary/10 text-primary">
+                    <span class="material-symbols-outlined text-4xl option-icon" data-icon="brush">brush</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Graphic Designer</h3>
+                <p class="text-on-surface-variant font-label-md text-label-md leading-relaxed">Master visual communication through layout, color, and typography.</p>
+                <div class="absolute bottom-0 right-0 p-4 opacity-0 group-[.active]:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+                </div>
+            </button>
+
+            <!-- UI/UX Designer -->
+            <button class="glass-card p-stack-md flex flex-col items-start text-left rounded-xl group relative overflow-hidden" data-id="ui-ux-designer" onclick="selectOption(this)" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);">
+                <div class="mb-6 p-4 rounded-lg bg-secondary/10 text-secondary">
+                    <span class="material-symbols-outlined text-4xl option-icon" data-icon="frame_inspect">frame_inspect</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2 text-on-surface">UI/UX Designer</h3>
+                <p class="text-on-surface-variant font-label-md text-label-md leading-relaxed">Shape digital experiences by focusing on usability and aesthetics.</p>
+                <div class="absolute bottom-0 right-0 p-4 opacity-0 group-[.active]:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+                </div>
+            </button>
+
+            <!-- Print Shop Owner -->
+            <button class="glass-card p-stack-md flex flex-col items-start text-left rounded-xl group relative overflow-hidden" data-id="print-shop" onclick="selectOption(this)" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);">
+                <div class="mb-6 p-4 rounded-lg bg-tertiary/10 text-tertiary">
+                    <span class="material-symbols-outlined text-4xl option-icon" data-icon="print">print</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Print Shop Owner</h3>
+                <p class="text-on-surface-variant font-label-md text-label-md leading-relaxed">Bridge the digital and physical worlds with high-quality media.</p>
+                <div class="absolute bottom-0 right-0 p-4 opacity-0 group-[.active]:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+                </div>
+            </button>
+
+            <!-- Content Creator -->
+            <button class="glass-card p-stack-md flex flex-col items-start text-left rounded-xl group relative overflow-hidden" data-id="content-creator" onclick="selectOption(this)" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);">
+                <div class="mb-6 p-4 rounded-lg bg-primary/10 text-primary">
+                    <span class="material-symbols-outlined text-4xl option-icon" data-icon="podcasts">podcasts</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Content Creator</h3>
+                <p class="text-on-surface-variant font-label-md text-label-md leading-relaxed">Build an audience and share your voice across digital platforms.</p>
+                <div class="absolute bottom-0 right-0 p-4 opacity-0 group-[.active]:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+                </div>
+            </button>
+
+            <!-- Video Editor -->
+            <button class="glass-card p-stack-md flex flex-col items-start text-left rounded-xl group relative overflow-hidden" data-id="video-editor" onclick="selectOption(this)" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);">
+                <div class="mb-6 p-4 rounded-lg bg-secondary/10 text-secondary">
+                    <span class="material-symbols-outlined text-4xl option-icon" data-icon="movie_edit">movie_edit</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Video Editor</h3>
+                <p class="text-on-surface-variant font-label-md text-label-md leading-relaxed">Craft compelling narratives through motion, cuts, and sound.</p>
+                <div class="absolute bottom-0 right-0 p-4 opacity-0 group-[.active]:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+                </div>
+            </button>
+
+            <!-- Photo Editor -->
+            <button class="glass-card p-stack-md flex flex-col items-start text-left rounded-xl group relative overflow-hidden" data-id="photo-editor" onclick="selectOption(this)" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);">
+                <div class="mb-6 p-4 rounded-lg bg-tertiary/10 text-tertiary">
+                    <span class="material-symbols-outlined text-4xl option-icon" data-icon="photo_filter">photo_filter</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Photo Editor</h3>
+                <p class="text-on-surface-variant font-label-md text-label-md leading-relaxed">Refine images to perfection with color grading and retouching.</p>
+                <div class="absolute bottom-0 right-0 p-4 opacity-0 group-[.active]:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+                </div>
+            </button>
+
+            <!-- Student -->
+            <button class="glass-card p-stack-md flex flex-col items-start text-left rounded-xl group relative overflow-hidden" data-id="student" onclick="selectOption(this)" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);">
+                <div class="mb-6 p-4 rounded-lg bg-primary/10 text-primary">
+                    <span class="material-symbols-outlined text-4xl option-icon" data-icon="school">school</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Student</h3>
+                <p class="text-on-surface-variant font-label-md text-label-md leading-relaxed">Learning the fundamentals and exploring diverse creative fields.</p>
+                <div class="absolute bottom-0 right-0 p-4 opacity-0 group-[.active]:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+                </div>
+            </button>
+
+            <!-- Freelancer -->
+            <button class="glass-card p-stack-md flex flex-col items-start text-left rounded-xl group relative overflow-hidden" data-id="freelancer" onclick="selectOption(this)" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);">
+                <div class="mb-6 p-4 rounded-lg bg-secondary/10 text-secondary">
+                    <span class="material-symbols-outlined text-4xl option-icon" data-icon="work">work</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Freelancer</h3>
+                <p class="text-on-surface-variant font-label-md text-label-md leading-relaxed">Managing a diverse portfolio of clients and multi-faceted projects.</p>
+                <div class="absolute bottom-0 right-0 p-4 opacity-0 group-[.active]:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+                </div>
+            </button>
+        </div>
+
+        <!-- Sticky Footer Navigation -->
+        <div class="mt-auto pt-stack-lg border-t border-white/5 flex flex-row justify-between items-center bg-surface/50 backdrop-blur-md sticky bottom-0 py-stack-md -mx-margin-mobile px-margin-mobile md:-mx-margin-desktop md:px-margin-desktop z-40">
+            <button class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors" onclick="window.location.href='/blueprint'">
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+                Back
+            </button>
+            <button class="btn-gradient px-12 py-4 rounded-full font-headline-md text-headline-md text-on-primary-fixed font-bold disabled:opacity-30 flex items-center gap-2" disabled="" id="continueBtn" onclick="window.location.href='/blueprint/step-final'">
+                Continue
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+            </button>
+        </div>
+    </main>
+
+    <Footer />
+
+    <script>
+        function selectOption(element: HTMLElement) {
+            // Clear all active states
+            const allOptions = document.querySelectorAll('.glass-card');
+            allOptions.forEach(opt => {
+                opt.classList.remove('active');
+                opt.classList.remove('group');
+                opt.classList.add('group');
+            });
+
+            // Set clicked option to active
+            element.classList.add('active');
+            
+            // Enable continue button
+            const continueBtn = document.getElementById('continueBtn') as HTMLButtonElement | null;
+            if (continueBtn) {
+                continueBtn.disabled = false;
+            }
+            
+            // Interaction feedback
+            element.style.transform = "scale(0.98)";
+            setTimeout(() => {
+                element.style.transform = "";
+            }, 100);
+        }
+
+        (window as any).selectOption = selectOption;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach((card, index) => {
+                (card as HTMLElement).style.opacity = '0';
+                (card as HTMLElement).style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    (card as HTMLElement).style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+                    (card as HTMLElement).style.opacity = '1';
+                    (card as HTMLElement).style.transform = 'translateY(0)';
+                }, 100 + (index * 50));
+            });
+        });
+    </script>
+</body>
+</html>

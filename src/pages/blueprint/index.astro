@@ -1,0 +1,169 @@
+---
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tech Soul | Blueprint Generator</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500&family=Geist:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #15121b;
+            color: #e8dfee;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: rgba(21, 18, 27, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .ambient-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, rgba(124, 58, 237, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero-gradient-text {
+            background: linear-gradient(to right, #d2bbff, #4cd7f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-glow:hover {
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+</style>
+</head>
+<body class="overflow-x-hidden bg-background text-on-surface">
+<!-- Ambient background element -->
+<div class="ambient-glow"></div>
+
+<Navbar />
+
+<main class="min-h-screen flex flex-col items-center justify-center pt-20 px-margin-mobile md:px-margin-desktop">
+<!-- Welcome Section -->
+<section class="w-full max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center py-stack-lg">
+<!-- Content Column -->
+<div class="flex flex-col items-start text-left space-y-stack-md order-2 lg:order-1">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+                    AI-POWERED ARCHITECT
+                </div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg tracking-tight leading-none text-on-surface">
+                    Build Your Perfect <br/>
+<span class="hero-gradient-text">Creative Blueprint</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                    Answer a few simple questions and Tech Soul will recommend the perfect software ecosystem for your creative journey.
+                </p>
+<div class="pt-stack-md flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="cta-glow relative group overflow-hidden bg-primary-container text-on-primary-container font-headline-md text-headline-md px-10 py-5 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3" onclick="window.location.href='/blueprint/step'">
+<span class="relative z-10">Start Building</span>
+<span class="material-symbols-outlined relative z-10">arrow_forward</span>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container to-secondary-container opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</button>
+<button class="bg-surface-variant/30 hover:bg-surface-variant/50 border border-white/5 text-on-surface font-headline-md text-headline-md px-10 py-5 rounded-xl transition-all duration-300 flex items-center justify-center gap-3">
+<span class="">How it works</span>
+</button>
+</div>
+<div class="pt-10 flex items-center gap-6">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a young creative professional with warm, dramatic lighting, wearing minimalist modern tech-wear, set against a dark, moody background with subtle purple lens flare." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiD_Wshz11YtUBVSx9qxWresh0oPMrS7RNNbk8LC_zcL43CVKBdh_Y_cpFVBy3ON3MY0vNyxgOFCxu_9JB6uPY1GmtTAeK5X5ogFFprvywdszGbxkLJn96wOhHEwlhh1N2s-yqSFArGxsWZPdfzlx1GxRtz5Ic8X6eI8_I_X9XfjkuJuXpngbmHoTQn7V3mZhiD_uOih-N74Lv-ntsxmT9wqlpwBUWpDxMaR1XrOJGtkFsjaGFHOfmDA"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up high-fashion portrait of a digital artist with vibrant teal and violet accent lighting, reflecting a futuristic aesthetic, captured with a shallow depth of field in a high-tech studio environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpl7jU5gyEl7H1Nn5xhjFxUlig9OHJem3E45EivOOC1DnixJ0RDPmzS9v3HwsWe53Q4gDVuNbH_gT99sCcqw9rMg5gA0nUeMKR79zJ-M99Nh6m3hGIinpnsXCun5PNQP9qBv1-UmXVYTxVZ3qD8RZaY1qH4vXQlRI5ZyTqHJgI5LTXF72KzlEy5K6ako0kgxa5KrFHD-p1Xuw80x-A8piXDiwuz4U4yVosBFKT3ftlsykbLf2Qn0gThw"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A creative professional looking thoughtfully at a digital interface, illuminated by soft blue light from a screen, styled with a high-end editorial aesthetic, clean lines, and a minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCopIjaukhytI6mMoJeck9n0M6h8jTmB1IX6uRIxjJ8cC2F-4hyfPJp-rygppPC-fN_u4_O3x4l9rkq__Yig15HdP1nQmsTWTpQGS7NLvVevGscqrCYFDkk_CZ9WVSF7gS5hc5uKrEYmLblScvxRAsk1WCHCMzIzK5VfwxzXkNvrWnW-Z76KFeXGt4on1rbxmMXvN_vzsiz901t8NqXBQI4slwj4NsYVxXNOPE6JKTFCKPNpw9nk3GK2w"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">
+                        Join <span class="text-primary font-bold">2,400+</span> creators optimizing their stack
+                    </p>
+</div>
+</div>
+<!-- Visual Column -->
+<div class="relative order-1 lg:order-2 flex justify-center items-center py-10 lg:py-0">
+<!-- Floating geometric illustration -->
+<div class="relative w-full aspect-square max-w-[500px] animate-float">
+<div class="absolute inset-0 rounded-full bg-primary/5 blur-3xl"></div>
+<!-- Main Blueprint Visual -->
+<div class="relative z-10 w-full h-full rounded-[40px] border border-white/10 bg-surface-container-low/40 backdrop-blur-sm overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative w-4/5 h-4/5">
+<img class="w-full h-full object-contain" data-alt="A premium 3D digital art piece showcasing a complex network of glowing geometric nodes and translucent glass-like spheres connected by fine lines of light. The composition represents a sophisticated software ecosystem or digital blueprint, featuring a palette of deep violet, electric blue, and soft silver. The lighting is ethereal and high-fidelity, creating a sense of professional craftsmanship and technological elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT8luVqngRerY2-s5XQn3BpMkdM7pKzbYTlFVeNMdGTN1ZEaOQK4q_Z7S_85vJc8uVMuoWt8jZ7-uNfQerjDNd0BATNaqarHpA4v4HlYxOVIDBxaVINVQcZMjtiU5tdHPPFvYSPJhaVUTFgcFVqz7TfO0t760fH2SRyIGIB6kaI7-tYhDeoS2c21U4OZURd3a1tMHQTkTNQB9WoRPckDEBTRkmcnxBHhrfK8mOUS-b97bekL0yrjvFTQ"/>
+</div>
+<!-- Floating Micro-Elements -->
+<div class="absolute top-10 right-10 p-4 rounded-2xl glass-panel animate-float" style="animation-delay: -2s;">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1">architecture</span>
+</div>
+<div class="absolute bottom-12 left-8 p-4 rounded-2xl glass-panel animate-float" style="animation-delay: -4s;">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1">auto_awesome</span>
+</div>
+</div>
+<!-- Decorative rings -->
+<div class="absolute -top-10 -right-10 w-40 h-40 border border-primary/20 rounded-full opacity-50"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 border border-secondary/10 rounded-full opacity-30"></div>
+</div>
+</div>
+</section>
+</main>
+
+<Footer />
+
+<script>
+        // Micro-interaction for the primary button
+        const mainBtn = document.querySelector('.cta-glow');
+        if(mainBtn) {
+            mainBtn.addEventListener('mousemove', (e: Event) => {
+                const mouseEvent = e as MouseEvent;
+                const rect = mainBtn.getBoundingClientRect();
+                const x = mouseEvent.clientX - rect.left;
+                const y = mouseEvent.clientY - rect.top;
+                (mainBtn as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+                (mainBtn as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+            });
+        }
+
+        // Parallax effect for the hero visual
+        document.addEventListener('mousemove', (e: MouseEvent) => {
+            const visual = document.querySelector('.animate-float') as HTMLElement | null;
+            if(visual) {
+                const x = (window.innerWidth / 2 - e.clientX) / 50;
+                const y = (window.innerHeight / 2 - e.clientY) / 50;
+                visual.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        });
+</script>
+</body>
+</html>
