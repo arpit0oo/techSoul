@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Compare Software | Tech Soul</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#1d1a24",
+                        "on-surface-variant": "#ccc3d8",
+                        "tertiary-container": "#a15100",
+                        "primary": "#d2bbff",
+                        "surface-container-highest": "#37333e",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-secondary-container": "#00424e",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e8dfee",
+                        "on-secondary-fixed": "#001f26",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "inverse-on-surface": "#332f39",
+                        "surface-container": "#221e28",
+                        "on-background": "#e8dfee",
+                        "on-primary-fixed": "#25005a",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "primary-container": "#7c3aed",
+                        "surface-tint": "#d2bbff",
+                        "on-tertiary-fixed": "#301400",
+                        "tertiary-fixed": "#ffdcc6",
+                        "surface-variant": "#37333e",
+                        "secondary-fixed": "#acedff",
+                        "on-surface": "#e8dfee",
+                        "on-error": "#690005",
+                        "background": "#15121b",
+                        "outline": "#958da1",
+                        "surface-container-high": "#2c2833",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#eaddff",
+                        "on-tertiary": "#4f2500",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "error": "#ffb4ab",
+                        "surface": "#15121b",
+                        "tertiary": "#ffb784",
+                        "secondary-container": "#03b5d3",
+                        "secondary": "#4cd7f6",
+                        "on-secondary": "#003640",
+                        "on-tertiary-container": "#ffe0cd",
+                        "surface-dim": "#15121b",
+                        "surface-container-lowest": "#100d16",
+                        "inverse-primary": "#732ee4",
+                        "on-primary": "#3f008e",
+                        "surface-bright": "#3c3742",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-primary-container": "#ede0ff",
+                        "outline-variant": "#4a4455"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-sm": "12px",
+                        "container-max": "1280px",
+                        "stack-lg": "48px",
+                        "unit": "8px",
+                        "stack-md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "mono-sm": ["Geist"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "label-md": ["Geist"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "mono-sm": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(22, 27, 34, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(13, 17, 23, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            top: -200px;
+            left: -200px;
+        }
+
+        .ambient-glow-cyan {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(76, 215, 246, 0.1) 0%, rgba(13, 17, 23, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            bottom: -100px;
+            right: -100px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#0D1117] text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col overflow-x-hidden relative">
+    <div
+        class="fixed top-0 right-0 w-[800px] h-[800px] bg-primary/10 blur-[120px] rounded-full -mr-96 -mt-96 pointer-events-none -z-10">
+    </div>
+    <div
+        class="fixed bottom-0 left-0 w-[800px] h-[800px] bg-secondary/10 blur-[120px] rounded-full -ml-96 -mb-96 pointer-events-none -z-10">
+    </div>
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-cyan"></div>
+    <!-- Navigation Bar -->
+    <nav
+        class="bg-surface/70 dark:bg-surface/70 backdrop-blur-xl font-body-md text-body-md fixed top-0 w-full z-50 border-b border-white/5 shadow-primary/20 shadow-2xl transition-all duration-300 ease-in-out">
+        <div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+            <a href="/" class="font-headline-md text-headline-md font-bold text-primary">Tech Soul</a>
+            <div class="hidden md:flex space-x-8 items-center"><a
+                    class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/10 px-3 py-2 rounded-md"
+                    href="/">Discover</a><a
+                    class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/10 px-3 py-2 rounded-md"
+                    href="/software">Software</a><a class="text-primary font-bold border-b-2 border-primary pb-1 px-3 py-2"
+                    href="/compare">Compare</a><a
+                    class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/10 px-3 py-2 rounded-md"
+                    href="/blueprint">Blueprints</a><a
+                    class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/10 px-3 py-2 rounded-md"
+                    href="/ai-tools">AI Tools</a><a
+                    class="text-on-surface-variant hover:text-primary transition-colors hover:bg-white/10 px-3 py-2 rounded-md"
+                    href="/resources">Resources</a></div>
+            <div class="flex items-center space-x-4">
+                <button
+                    class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-white/10">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <button
+                    class="bg-gradient-to-r from-primary-container to-secondary text-white font-bold py-2 px-6 rounded-lg shadow-lg hover:shadow-primary/30 transition-all duration-300">Get
+                    Started</button>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow z-10 pt-32 pb-24 relative">
+        <!-- Hero Section -->
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-24">
+            <div
+                class="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1 mb-6">
+                <span class="material-symbols-outlined text-primary text-sm"
+                    style="font-variation-settings: 'FILL' 1;">compare_arrows</span>
+                <span class="font-mono-sm text-mono-sm text-primary uppercase tracking-widest">SIDE-BY-SIDE
+                    ANALYSIS</span>
+            </div>
+            <h1
+                class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-6 mx-auto max-w-4xl">
+                Compare Software. Choose Confidently.
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Stop guessing. See exactly how tools differ across features, pricing, learning curve, and real-world use
+                cases.
+            </p>
+        </section>
+        <!-- Comparison Grid -->
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12 flex flex-wrap gap-3">
+            <button
+                class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md transition-all">All</button><button
+                class="bg-surface-container-high text-on-surface-variant hover:text-primary border border-white/10 px-6 py-2 rounded-full font-label-md text-label-md transition-all">Creative
+                &amp; Design</button><button
+                class="bg-surface-container-high text-on-surface-variant hover:text-primary border border-white/10 px-6 py-2 rounded-full font-label-md text-label-md transition-all">Productivity</button><button
+                class="bg-surface-container-high text-on-surface-variant hover:text-primary border border-white/10 px-6 py-2 rounded-full font-label-md text-label-md transition-all">AI
+                Tools</button><button
+                class="bg-surface-container-high text-on-surface-variant hover:text-primary border border-white/10 px-6 py-2 rounded-full font-label-md text-label-md transition-all">SaaS</button>
+        </div>
+        <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Real Comparison -->
+                <a href="/compare/photoshop-vs-coreldraw" class="bg-white/5 backdrop-blur-xl border border-primary/40 rounded-2xl p-8 hover:scale-[1.02] hover:bg-white/10 hover:border-primary/50 transition-all duration-300 shadow-2xl hover:shadow-primary/20 relative group cursor-pointer flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="flex items-center">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center border border-white/10 shadow-lg z-10">
+                                <span class="font-headline-md text-headline-md font-bold text-white">Ps</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-highest border border-primary/30 z-20 -mx-4 shadow-xl">
+                                <span
+                                    class="font-mono-sm text-mono-sm font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">VS</span>
+                            </div>
+                            <div
+                                class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-800 flex items-center justify-center border border-white/10 shadow-lg z-10">
+                                <span class="font-headline-md text-headline-md font-bold text-white">Cd</span>
+                            </div>
+                        </div>
+                        <span
+                            class="font-mono-sm text-mono-sm text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">Creative
+                            &amp; Design</span>
+                    </div>
+                    <div class="flex-grow">
+                        <h3
+                            class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">
+                            Photoshop vs. CorelDRAW</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">The industry standard
+                            meets the vector powerhouse. Compare pixel manipulation against precise illustration
+                            capabilities.</p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span
+                            class="font-body-md text-body-md text-primary font-medium group-hover:translate-x-1 transition-transform">View
+                            Comparison</span>
+                        <span
+                            class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </div>
+                </a>
+                <!-- Card 2: Placeholder -->
+                <div
+                    class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 relative grayscale-[50%] hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-500 flex flex-col h-full group">
+                    <div
+                        class="absolute top-4 right-4 bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full font-mono-sm text-mono-sm z-30">
+                        Coming Soon</div>
+                    <div class="flex justify-between items-start mb-8 opacity-50">
+                        <div class="flex items-center">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-surface-container-high flex items-center justify-center border border-white/5">
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant text-3xl">design_services</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container border border-white/10 z-20 -mx-4">
+                                <span class="font-mono-sm text-mono-sm font-bold text-on-surface-variant">VS</span>
+                            </div>
+                            <div
+                                class="w-16 h-16 rounded-xl bg-surface-container-high flex items-center justify-center border border-white/5">
+                                <span class="material-symbols-outlined text-on-surface-variant text-3xl">brush</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-grow opacity-50">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-3">Figma vs. Sketch</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">The battle for UI/UX supremacy.
+                            Cloud collaboration versus native performance.</p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-center">
+                        <button
+                            class="bg-surface-container-highest border border-white/10 px-6 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Vote
+                            to Compare</button>
+                    </div>
+                </div>
+                <!-- Card 3: Placeholder -->
+                <div
+                    class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 relative grayscale-[50%] hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-500 flex flex-col h-full group">
+                    <div
+                        class="absolute top-4 right-4 bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full font-mono-sm text-mono-sm z-30">
+                        Coming Soon</div>
+                    <div class="flex justify-between items-start mb-8 opacity-50">
+                        <div class="flex items-center">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-surface-container-high flex items-center justify-center border border-white/5">
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant text-3xl">description</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container border border-white/10 z-20 -mx-4">
+                                <span class="font-mono-sm text-mono-sm font-bold text-on-surface-variant">VS</span>
+                            </div>
+                            <div
+                                class="w-16 h-16 rounded-xl bg-surface-container-high flex items-center justify-center border border-white/5">
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant text-3xl">note_stack</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-grow opacity-50">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-3">Notion vs. Obsidian</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">All-in-one workspace against
+                            local-first knowledge graph. Which brain is better?</p>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-center">
+                        <button
+                            class="bg-surface-container-highest border border-white/10 px-6 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Vote
+                            to Compare</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Suggest Section -->
+        <section class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+            <div
+                class="bg-[#161B22] border border-white/10 rounded-2xl p-10 md:p-16 flex flex-col items-center text-center shadow-2xl relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl -mr-32 -mt-32">
+                </div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -ml-32 -mb-32">
+                </div>
+                <div class="relative z-10">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-6 block"
+                        style="font-variation-settings: 'FILL' 0;">psychology_alt</span>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Don't see what you need?</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg mx-auto">
+                        Tell us which tools you want compared next. Our editorial team prioritizes requests from the
+                        community.
+                    </p>
+                    <form class="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto">
+                        <input
+                            class="flex-grow bg-[#0D1117] border border-white/10 rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary shadow-inner transition-all placeholder:text-on-surface-variant/50"
+                            placeholder="e.g. Jira vs Linear" type="text">
+                        <button
+                            class="bg-gradient-to-r from-primary-container to-[#6025c0] text-white font-bold py-3 px-8 rounded-lg shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] transition-all duration-300 shrink-0"
+                            type="button">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-lowest dark:bg-surface-container-lowest font-body-md text-body-md w-full border-t border-white/5 no-shadows transition-opacity duration-200">
+        <div
+            class="max-w-container-max mx-auto px-margin-desktop py-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <a href="/" class="font-headline-md text-headline-md font-bold text-primary">Tech Soul</a>
+            <div class="flex flex-wrap justify-center gap-8"><a
+                    class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Product</a><a
+                    class="text-on-surface-variant hover:text-secondary transition-colors" href="/resources">Resources</a><a
+                    class="text-on-surface-variant hover:text-secondary transition-colors" href="#">About</a><a
+                    class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact</a></div>
+            <div class="text-on-surface-variant text-sm">© 2024 Tech Soul. All rights reserved.</div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
