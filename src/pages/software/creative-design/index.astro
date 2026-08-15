@@ -1,0 +1,780 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const pageStyles = `
+  .glass-panel {
+    @apply bg-surface/70 backdrop-blur-[20px] border border-white/10;
+  }
+  .glow-shadow {
+    box-shadow: 0 0 30px rgba(124,58,237,0.2);
+  }
+  .text-gradient {
+    background: linear-gradient(to right, #d2bbff, #4cd7f6);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+`;
+---
+
+<Layout
+  title="Creative &amp; Design Software - Tech Soul"
+  description="Discover the tools that bring imagination to life. From pixel-perfect UI design to professional photo manipulation."
+  pageStyles={pageStyles}
+>
+
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="text-headline-md font-headline-md font-bold text-on-surface dark:text-on-surface flex items-center gap-2 group" href="#">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-surface font-black group-hover:glow-shadow transition-shadow">
+                    TS
+                </div>
+                Tech Soul
+            </a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Discover</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Industries</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Blueprints</a>
+<!-- Active State Logic Applied Here: Software -->
+<a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 duration-100 flex items-center gap-1" href="#">
+                    Software
+                </a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">AI Tools</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Resources</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container text-white font-headline-md text-label-md font-bold hover:brightness-110 glow-shadow transition-all active:scale-95 duration-100">
+                    Compare
+                </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-[88px] min-h-screen">
+<!-- Breadcrumbs -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-md mt-4">
+<nav class="flex text-on-surface-variant font-label-md text-label-md">
+<ol class="flex items-center space-x-2">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Software</a></li>
+<li><span class="material-symbols-outlined text-sm mx-1 opacity-50" data-icon="chevron_right">chevron_right</span></li>
+<li aria-current="page" class="text-primary font-medium">Creative &amp; Design</li>
+</ol>
+</nav>
+</div>
+<!-- CATEGORY HERO: Editorial Split Layout -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg lg:py-16">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<!-- Left: Content -->
+<div class="space-y-stack-md relative z-10">
+<!-- Eyebrow/Stats -->
+<div class="flex flex-wrap items-center gap-4 font-mono-sm text-mono-sm">
+<div class="px-3 py-1 rounded-full bg-surface-container border border-white/5 text-primary">
+                            120+ Software
+                        </div>
+<div class="px-3 py-1 rounded-full bg-surface-container border border-white/5 text-secondary">
+                            8 Subcategories
+                        </div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="verified">verified</span>
+                            Curated for Creators
+                        </div>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface">
+                        Creative &amp; <br>
+<span class="text-gradient">Design Software</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        Discover the tools that bring imagination to life. From pixel-perfect UI design to professional photo manipulation and complex vector illustrations, explore our curated directory of industry-standard creative software.
+                    </p>
+<div class="flex flex-wrap items-center gap-4 pt-4">
+<button class="px-8 py-3.5 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container text-white font-headline-md text-body-md font-bold hover:brightness-110 glow-shadow transition-all transform hover:scale-[1.02] active:scale-95 duration-200">
+                            Explore Directory
+                        </button>
+<button class="px-8 py-3.5 rounded-lg border border-outline-variant bg-transparent text-on-surface font-headline-md text-body-md font-medium hover:bg-surface-container hover:border-outline transition-all duration-200 flex items-center gap-2 group">
+                            Build Blueprint
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right: Abstract Visual Composition -->
+<div class="relative h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden glass-panel group">
+<!-- We use a placeholder image for the abstract composition, with detailed data-alt for generation -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A highly complex and abstract 3D visual composition representing digital creativity and software interfaces. The scene features layered, translucent glassmorphic panels floating in a dark, moody void (#15121B). Glowing neon violet and cyan geometric shapes (spheres, bezier curves, color palettes) intersect with wireframes and UI elements. The lighting is dramatic, with soft volumetric glow emitting from the abstract shapes, creating a premium, futuristic, and editorial aesthetic suitable for a high-end tech website." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDh6Ve0YeNeIfknRstwlCEmIyUEBAvNqtkBGC1Hf4STKCMjyTMWFZyte_HADWwSYa4MS_W6zcsRBPK7hpMNd57VVzDmb5XF7DZAyl230-BVYfx5R2tH8SiRgYrsSwqUvxWdTORn_CxrkNXAzG1MLjO-fthXOgV6QghIScqnn0fx0N1-IYOW3hiM6N3ApygmL1W1AWq98cwsZghWziljHrsHpgtdwib23XPzQouJ4zKWfhbMyE5LE1TMiA')"></div>
+<!-- Decorative Overlay Elements to enhance the "creative software" feel -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<!-- Floating UI elements (mocking interface layers) -->
+<div class="absolute top-8 right-8 w-32 h-32 rounded-full border border-primary/30 blur-[1px] animate-pulse"></div>
+<div class="absolute bottom-12 left-12 p-4 rounded-xl glass-panel shadow-2xl transform -rotate-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="brush">brush</span>
+</div>
+<div class="w-16 h-2 bg-surface-bright rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CATEGORY NAVIGATION -->
+<div class="sticky top-[88px] z-40 bg-surface/90 backdrop-blur-md border-y border-white/5 py-4 mt-8 mb-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop overflow-x-auto scrollbar-hide">
+<div class="flex items-center gap-2 min-w-max">
+<button class="px-5 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md border border-primary/20 hover:bg-primary/20 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="local_fire_department">local_fire_department</span>
+                        Popular
+                    </button>
+<button class="px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-white/5 hover:text-on-surface hover:bg-surface-container-high transition-colors">
+                        Graphic Design
+                    </button>
+<button class="px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-white/5 hover:text-on-surface hover:bg-surface-container-high transition-colors">
+                        Photo Editing
+                    </button>
+<button class="px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-white/5 hover:text-on-surface hover:bg-surface-container-high transition-colors">
+                        UI/UX Design
+                    </button>
+<button class="px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-white/5 hover:text-on-surface hover:bg-surface-container-high transition-colors">
+                        Illustration
+                    </button>
+<button class="px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-white/5 hover:text-on-surface hover:bg-surface-container-high transition-colors">
+                        Video &amp; Motion
+                    </button>
+<button class="px-5 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md border border-white/5 hover:text-on-surface hover:bg-surface-container-high transition-colors">
+                        3D Modeling
+                    </button>
+</div>
+</div>
+</div>
+<!-- FEATURED SOFTWARE: Bento Grid Layout -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-stack-lg py-stack-md">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Featured Tools</h2>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1" href="#">
+                    View all <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px]">
+<!-- Large Featured Card (Adobe Photoshop) -->
+<div class="md:col-span-2 md:row-span-2 rounded-2xl glass-panel p-8 flex flex-col justify-between group hover:scale-[1.01] hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
+<!-- Subtle background glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary-container/10 rounded-full blur-[60px] group-hover:bg-secondary-container/20 transition-colors"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-xl bg-[#001E36] flex items-center justify-center border border-[#31A8FF]/30 shadow-lg">
+<!-- Simulated Ps logo -->
+<span class="font-headline-lg text-[28px] font-bold text-[#31A8FF]">Ps</span>
+</div>
+<div>
+<div class="font-mono-sm text-mono-sm text-secondary mb-1">Photo Editing</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Adobe Photoshop</h3>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container border border-white/10 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+<div class="relative z-10 mt-auto">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-6 line-clamp-2">
+                            The industry standard in professional photo editing, digital imaging, and graphic design. Transform images with AI-powered tools and advanced compositing.
+                        </p>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/5">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="devices">devices</span>
+                                    Mac, Win, iPad
+                                </div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="payments">payments</span>
+                                    From $22.99/mo
+                                </div>
+</div>
+<button class="px-5 py-2.5 rounded-lg bg-surface-bright text-on-surface font-label-md text-label-md hover:bg-white hover:text-background transition-colors">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Small Card 1 (Figma) -->
+<div class="rounded-2xl glass-panel p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-white/20 transition-all duration-300">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-primary" data-icon="design_services">design_services</span>
+</div>
+<div>
+<div class="font-mono-sm text-[10px] text-tertiary">UI/UX Design</div>
+<h4 class="font-headline-md text-[18px] font-semibold text-on-surface">Figma</h4>
+</div>
+</div>
+</div>
+<div>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2 mb-4">Collaborative interface design tool.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-[12px] text-on-surface-variant">Freemium</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Small Card 2 (Canva) -->
+<div class="rounded-2xl glass-panel p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-white/20 transition-all duration-300">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-secondary" data-icon="palette">palette</span>
+</div>
+<div>
+<div class="font-mono-sm text-[10px] text-primary">Graphic Design</div>
+<h4 class="font-headline-md text-[18px] font-semibold text-on-surface">Canva</h4>
+</div>
+</div>
+</div>
+<div>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2 mb-4">Accessible design for everyone.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-[12px] text-on-surface-variant">Freemium</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- EXPLORE BY USE CASE -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-stack-lg py-stack-md">
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Explore Creative Software</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Browse trusted creative software by category, platform, pricing, and use case.</p>
+</div>
+<!-- Controls -->
+<div class="flex flex-col lg:flex-row gap-4 mb-8">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container border border-white/10 rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary outline-none transition-all" placeholder="Search creative software..." type="text">
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container border border-white/10 text-on-surface-variant font-label-md text-label-md hover:border-primary/50 flex items-center gap-2">
+        Category <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container border border-white/10 text-on-surface-variant font-label-md text-label-md hover:border-primary/50 flex items-center gap-2">
+        Platform <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container border border-white/10 text-on-surface-variant font-label-md text-label-md hover:border-primary/50 flex items-center gap-2">
+        Pricing <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container border border-white/10 text-on-surface-variant font-label-md text-label-md hover:border-primary/50 flex items-center gap-2">
+        Sort by <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Software Directory Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card Template (Repeated for 12 items) -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-primary">image</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Adobe Photoshop</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Photo Editing</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Professional image editing and compositing.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">Subscription</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">desktop_windows</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Adobe Illustrator -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-secondary">draw</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Adobe Illustrator</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Vector Graphics</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Industry-standard vector graphics software.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">Subscription</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">desktop_windows</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Adobe InDesign -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-tertiary">auto_stories</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Adobe InDesign</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Layout Design</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Professional page layout and design.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">Subscription</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">desktop_windows</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- CorelDRAW -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-primary">pentagon</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">CorelDRAW</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Graphic Design</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Professional graphic design software suite.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">One-time</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">desktop_windows</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Canva -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-secondary">palette</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Canva</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Graphic Design</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Online design and publishing tool.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">Freemium</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">language</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">smartphone</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Figma -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-primary">design_services</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Figma</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">UI/UX Design</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Collaborative interface design tool.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">Freemium</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">language</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Affinity Photo -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-primary">photo_filter</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Affinity Photo</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Photo Editing</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Professional photo editing software.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">One-time</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">desktop_windows</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Affinity Designer -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Affinity Designer</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Vector Graphics</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Fast, smooth vector graphic design.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">One-time</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">desktop_windows</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Adobe Premiere Pro -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-primary">movie</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Adobe Premiere Pro</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Video Editing</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Professional video editing software.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">Subscription</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">desktop_windows</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Adobe After Effects -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-tertiary">animation</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Adobe After Effects</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Motion Graphics</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Industry-standard motion graphics.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">Subscription</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">desktop_windows</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Blender -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-secondary">3d_rotation</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Blender</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">3D Modeling</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">Free and open source 3D creation suite.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">Free</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">desktop_windows</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">terminal</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+<!-- Sketch -->
+<div class="rounded-lg glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-primary">diamond</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 font-label-md text-[12px]">
+<span class="material-symbols-outlined text-sm">compare_arrows</span> Compare
+        </button>
+</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-1">Sketch</h4>
+<div class="text-secondary font-mono-sm text-[10px] mb-2">UI/UX Design</div>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-4">The digital design toolkit for Mac.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex flex-col gap-1">
+<span class="text-[12px] text-on-surface-variant">Subscription</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-[14px] opacity-60">laptop_mac</span>
+</div>
+</div>
+<a class="text-primary font-label-md text-sm hover:underline" href="#">View Details →</a>
+</div>
+</div>
+</div>
+<!-- Section Footer -->
+<div class="mt-12 text-center">
+<a class="inline-flex items-center gap-2 text-primary font-headline-md text-body-md hover:underline group" href="#">
+      View all Creative Software
+      <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section><section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-stack-lg py-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Explore by Goal</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Goal Tile 1 -->
+<a class="group block relative overflow-hidden rounded-xl h-40 glass-panel border border-white/5 hover:border-primary/30 transition-all" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative h-full p-6 flex flex-col justify-end z-10">
+<span class="material-symbols-outlined text-[32px] text-primary mb-2 opacity-80 group-hover:opacity-100 group-hover:-translate-y-1 transition-all" data-icon="share">share</span>
+<h3 class="font-headline-md text-[18px] text-on-surface">Create social media graphics</h3>
+</div>
+</a>
+<!-- Goal Tile 2 -->
+<a class="group block relative overflow-hidden rounded-xl h-40 glass-panel border border-white/5 hover:border-secondary/30 transition-all" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative h-full p-6 flex flex-col justify-end z-10">
+<span class="material-symbols-outlined text-[32px] text-secondary mb-2 opacity-80 group-hover:opacity-100 group-hover:-translate-y-1 transition-all" data-icon="photo_camera">photo_camera</span>
+<h3 class="font-headline-md text-[18px] text-on-surface">Edit professional photos</h3>
+</div>
+</a>
+<!-- Goal Tile 3 -->
+<a class="group block relative overflow-hidden rounded-xl h-40 glass-panel border border-white/5 hover:border-tertiary/30 transition-all" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative h-full p-6 flex flex-col justify-end z-10">
+<span class="material-symbols-outlined text-[32px] text-tertiary mb-2 opacity-80 group-hover:opacity-100 group-hover:-translate-y-1 transition-all" data-icon="branding_watermark">branding_watermark</span>
+<h3 class="font-headline-md text-[18px] text-on-surface">Design a brand identity</h3>
+</div>
+</a>
+<!-- Goal Tile 4 -->
+<a class="group block relative overflow-hidden rounded-xl h-40 glass-panel border border-white/5 hover:border-primary/30 transition-all" href="#">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative h-full p-6 flex flex-col justify-end z-10">
+<span class="material-symbols-outlined text-[32px] text-primary mb-2 opacity-80 group-hover:opacity-100 group-hover:-translate-y-1 transition-all" data-icon="web">web</span>
+<h3 class="font-headline-md text-[18px] text-on-surface">Create UI/UX designs</h3>
+</div>
+</a>
+</div>
+</section>
+<!-- CREATOR BLUEPRINT CTA -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-stack-lg py-stack-md">
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Compare Creative Software</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">See how popular creative tools compare across features, pricing, workflow, and use cases.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Card 1: Large/Dominant -->
+<div class="lg:col-span-2 rounded-2xl glass-panel p-8 border border-white/5 hover:border-primary/30 transition-all group relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-colors"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 text-secondary font-mono-sm text-mono-sm mb-4">
+<span class="material-symbols-outlined text-[18px]">compare_arrows</span>
+          Photo Editing
+        </div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Adobe Photoshop <span class="text-on-surface-variant font-medium mx-2">vs</span> Affinity Photo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xl">
+          Decide between the industry standard and its most powerful professional alternative. Both offer world-class tools, but differ significantly in pricing models and specific AI capabilities.
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="space-y-1">
+<div class="font-label-md text-label-md text-on-surface">Features</div>
+<div class="text-sm text-on-surface-variant">Generative AI vs. High-performance engine</div>
+</div>
+<div class="space-y-1">
+<div class="font-label-md text-label-md text-on-surface">Pricing</div>
+<div class="text-sm text-on-surface-variant">Subscription vs. One-time purchase</div>
+</div>
+<div class="space-y-1">
+<div class="font-label-md text-label-md text-on-surface">Best For</div>
+<div class="text-sm text-on-surface-variant">Enterprise workflows vs. Independent creators</div>
+</div>
+</div>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-background font-bold text-label-md hover:brightness-110 transition-all flex items-center gap-2">
+          Compare <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-2xl glass-panel p-6 border border-white/5 hover:border-secondary/30 transition-all group flex flex-col justify-between">
+<div>
+<div class="text-tertiary font-mono-sm text-[10px] mb-2">Vector &amp; Graphic Design</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-2">Illustrator vs CorelDRAW</h4>
+<p class="text-sm text-on-surface-variant line-clamp-3">Choose the right engine for your vector illustrations and branding projects.</p>
+</div>
+<a class="mt-6 text-primary font-label-md text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform" href="#">
+        Compare <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="rounded-2xl glass-panel p-6 border border-white/5 hover:border-primary/30 transition-all group flex flex-col justify-between">
+<div>
+<div class="text-primary font-mono-sm text-[10px] mb-2">UI/UX Design</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-2">Figma vs Sketch</h4>
+<p class="text-sm text-on-surface-variant line-clamp-3">Find the best interface design tool for your team's collaborative workflow.</p>
+</div>
+<a class="mt-6 text-primary font-label-md text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform" href="#">
+        Compare <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4 -->
+<div class="lg:col-span-2 rounded-2xl glass-panel p-6 border border-white/5 hover:border-secondary/30 transition-all group flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="max-w-md">
+<div class="text-secondary font-mono-sm text-[10px] mb-2">Video Editing</div>
+<h4 class="font-headline-md text-[18px] text-on-surface mb-2">Premiere Pro vs DaVinci Resolve</h4>
+<p class="text-sm text-on-surface-variant">Balance professional editing power with world-class color grading capabilities.</p>
+</div>
+<a class="text-primary font-label-md text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform whitespace-nowrap" href="#">
+        Compare <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a class="inline-flex items-center gap-2 text-primary font-headline-md text-body-md hover:underline group" href="#">
+      View all comparisons
+      <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section><section class="mb-stack-lg border-y border-white/5 bg-surface-container relative overflow-hidden">
+<!-- Background Decoration -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-primary-container/10 to-transparent blur-[100px]"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 lg:py-24 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-xl">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-headline-lg md:text-[48px] font-bold text-on-surface mb-4">
+                        Build your creative toolkit
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Not sure where to start? Use our interactive Blueprint builder to select your goals, budget, and skill level. We'll generate a custom stack of software perfectly tailored to your creative workflow.
+                    </p>
+<div class="flex items-center gap-4">
+<button class="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-background font-headline-md text-body-md font-bold hover:brightness-110 glow-shadow transition-all active:scale-95 duration-100 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+                            Build a Blueprint
+                        </button>
+<span class="text-on-surface-variant font-label-md text-label-md">100% Free</span>
+</div>
+</div>
+<!-- Stylized Toolkit Graphic -->
+<div class="hidden lg:flex relative w-80 h-80 items-center justify-center">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-[80px]"></div>
+<div class="relative glass-panel w-48 h-64 rounded-2xl border-white/20 shadow-2xl transform -rotate-12 flex flex-col items-center justify-center gap-4 border-t-2 border-l-2 border-white/30 backdrop-blur-3xl">
+<span class="material-symbols-outlined text-[48px] text-primary" data-icon="layers">layers</span>
+<div class="w-24 h-2 bg-surface-bright rounded-full"></div>
+<div class="w-16 h-2 bg-surface-bright rounded-full"></div>
+</div>
+<div class="absolute glass-panel w-48 h-64 rounded-2xl border-white/20 shadow-2xl transform rotate-6 translate-x-12 translate-y-8 flex flex-col items-center justify-center gap-4 border-t-2 border-r-2 border-white/30 backdrop-blur-3xl">
+<span class="material-symbols-outlined text-[48px] text-secondary" data-icon="view_quilt">view_quilt</span>
+<div class="w-24 h-2 bg-surface-bright rounded-full"></div>
+<div class="w-20 h-2 bg-surface-bright rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER (Shared Component) -->
+<footer class="w-full bg-surface-container dark:bg-surface-container border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto gap-8">
+<!-- Brand Info -->
+<div class="flex flex-col gap-4">
+<a class="font-headline-md text-headline-md font-bold text-on-surface flex items-center gap-2" href="#">
+<div class="w-6 h-6 rounded bg-gradient-to-br from-primary to-secondary"></div>
+                        Tech Soul
+                    </a>
+<p class="font-label-md text-label-md text-on-surface-variant max-w-xs">
+                        Empowering digital creators with the tools to build the future.
+                    </p>
+</div>
+<!-- Footer Links Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full md:w-auto">
+<!-- Column 1 -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Product</h4>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Software</a>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Categories</a>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Compare</a>
+</div>
+<!-- Column 2 -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Resources</h4>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Blueprints</a>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Resources</a>
+</div>
+<!-- Column 3 -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Company</h4>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">About</a>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<!-- Column 4 -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Legal</h4>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/5">
+<div class="px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto text-center md:text-left">
+<p class="font-label-md text-label-md text-on-surface-variant opacity-60">
+                        © 2024 Tech Soul. All rights reserved.
+                    </p>
+</div>
+</div>
+</footer>
+</main>
+
+</Layout>

@@ -1,1 +1,0 @@
-document.addEventListener("scroll",()=>{const s=document.querySelector("nav");s&&(window.scrollY>50?(s.classList.add("py-2"),s.classList.remove("h-20"),s.classList.add("h-16")):(s.classList.remove("py-2"),s.classList.add("h-20"),s.classList.remove("h-16")))});

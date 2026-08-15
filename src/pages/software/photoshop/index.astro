@@ -1,0 +1,428 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const pageStyles = `
+body {
+            background-color: #0D1117; /* Custom override to match prompt requirement while retaining theme */
+            color: #e8dfee; /* on-background */
+        }
+        .glass-panel {
+            background: rgba(22, 27, 34, 0.7); /* Surface color approx with opacity */
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card {
+            background: rgba(22, 27, 34, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: scale(1.02);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .primary-gradient-btn {
+            background: linear-gradient(135deg, #7c3aed 0%, #03b5d3 100%);
+            box-shadow: 0 8px 32px rgba(124, 58, 237, 0.2);
+            transition: all 0.3s ease;
+        }
+        .primary-gradient-btn:hover {
+            background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+            box-shadow: 0 12px 40px rgba(124, 58, 237, 0.3);
+        }
+        .secondary-ghost-btn {
+            background: transparent;
+            border: 1px solid #8B949E;
+            transition: all 0.3s ease;
+        }
+        .secondary-ghost-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #d2bbff 0%, #4cd7f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom section spacing */
+        .section-spacing {
+            margin-top: 128px;
+            margin-bottom: 128px;
+        }
+        @media (max-width: 768px) {
+            .section-spacing {
+                margin-top: 80px;
+                margin-bottom: 80px;
+            }
+        }
+`;
+---
+
+<Layout
+  title="Adobe Photoshop | Tech Soul"
+  description="The industry standard in digital imaging, used by professionals worldwide for photo editing, compositing, digital painting, and graphic design."
+  pageStyles={pageStyles}
+>
+
+<!-- TopNavBar (From JSON) -->
+<nav class="bg-background/70 backdrop-blur-xl border-b border-white/5 shadow-primary/20 shadow-2xl fixed top-0 w-full z-50 h-20">
+<div class="flex justify-between items-center h-full px-margin-desktop max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight" href="#">Tech Soul</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Discover</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Industries</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Blueprints</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 transition-transform px-3 py-2" href="#">Software</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#">AI Tools</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">search</span>
+</button>
+<a class="hidden md:inline-flex primary-gradient-btn text-white font-label-md text-label-md font-bold px-6 py-3 rounded-lg items-center justify-center" href="#">
+                    Get Started
+                </a>
+<button class="md:hidden text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full pb-section-spacing">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-on-surface-variant font-mono-sm text-mono-sm mb-stack-md opacity-70">
+<a class="hover:text-primary transition-colors" href="#">Software</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Creative &amp; Design</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">Adobe Photoshop</span>
+</div>
+<!-- Hero Section -->
+<section class="glass-panel rounded-xl p-8 md:p-12 mb-stack-lg flex flex-col md:flex-row gap-stack-lg items-start relative overflow-hidden">
+<!-- Subtle background accent -->
+<div class="absolute -top-40 -right-40 w-96 h-96 bg-primary-container/20 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Logo Area -->
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-2xl bg-surface flex items-center justify-center border border-white/10 shrink-0 shadow-lg relative overflow-hidden group">
+<div class="bg-cover bg-center w-full h-full absolute inset-0 opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="A highly detailed, ultra-high-resolution close-up of a glowing, minimalist letter 'P' logo in deep blue and vibrant cyan, resting on a sleek dark metallic surface. The lighting is dramatic and studio-quality, creating soft reflections and emphasizing premium software design. The overall mood is modern, technical, and sophisticated." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6AUJMkMUtaqKoLtKbRbkk-y13Mtj2_txAYy2XGJ4rU9G2xrDVXdX_GwMJ5WRR6eux9MRNNouY2zmo88yCFVnSOEJ-RmQ8CjXaWAz1s0iEFgixHGwhdfWj1JCtyvTxe41xb-A3rtQK0Znc6Wkk74gobYyRVwrZAy_rrbKOd9WWe7yqDUGxDOjUe5_x9tWbzTx_68GqlkX563c5jQIjVfZOYfOto_IDk4aXSxdFISneWFkPAXNUxAB3Qg')"></div>
+</div>
+<!-- Content Area -->
+<div class="flex-grow flex flex-col justify-center">
+<div class="flex flex-wrap items-center gap-3 mb-4">
+<span class="bg-primary-container/10 text-primary font-mono-sm text-mono-sm px-3 py-1 rounded-full border border-primary/20">Photo Editing</span>
+<span class="bg-surface-variant text-on-surface-variant font-mono-sm text-mono-sm px-3 py-1 rounded-full border border-white/5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">monetization_on</span> Subscription
+                    </span>
+<span class="bg-secondary/10 text-secondary font-mono-sm text-mono-sm px-3 py-1 rounded-full border border-secondary/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Free Trial
+                    </span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-4">
+                    Adobe Photoshop
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 max-w-2xl">
+                    The industry standard in digital imaging, used by professionals worldwide for photo editing, compositing, digital painting, and graphic design.
+                </p>
+<div class="flex flex-wrap items-center gap-4 text-on-surface-variant font-label-md text-label-md mb-8">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">desktop_mac</span> Mac</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">desktop_windows</span> Windows</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">tablet_mac</span> iPad</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mb-4">
+<a class="primary-gradient-btn text-white font-label-md text-label-md font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2" href="#">
+                        Visit Official Website <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="secondary-ghost-btn text-on-surface font-label-md text-label-md font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2" href="#">
+                        Compare Alternatives
+                    </a>
+</div>
+<p class="text-[12px] text-on-surface-variant/50 font-mono-sm">
+                    Tech Soul may earn a commission when you purchase through our links.
+                </p>
+</div>
+</section>
+<!-- EDITORIAL CONTENT SECTIONS -->
+<!-- 1. What is Adobe Photoshop? -->
+<section class="mb-stack-lg pt-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-stack-lg">
+<div class="lg:col-span-2 flex flex-col gap-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">What is Adobe Photoshop?</h2>
+<p class="text-on-surface-variant">Adobe Photoshop is widely considered the industry standard for professional photo editing, digital art, and graphic design. For decades, it has provided creatives with a powerful, layer-based workflow capable of manipulating images with incredible precision. Whether you are retouching a portrait, composing complex surreal landscapes, or designing web assets, Photoshop offers an unparalleled toolkit.</p>
+<p class="text-on-surface-variant">With recent integrations of Adobe Firefly, Photoshop now features advanced generative AI capabilities, allowing users to extend images, remove objects seamlessly, or generate entirely new elements directly within the application, further cementing its position as a vital tool for modern digital workflows.</p>
+</div>
+<div class="lg:col-span-1">
+<div class="glass-card rounded-xl p-6 h-full border-l-4 border-l-primary">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Our Take</h3>
+</div>
+<p class="text-on-surface-variant text-sm">For professional creative work, there is simply no substitute. While alternatives have improved significantly, Photoshop's vast ecosystem, deep feature set, and integration with the Adobe Creative Cloud make it an essential investment for serious designers and photographers, despite the subscription model and steep learning curve.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Key Capabilities -->
+<section class="mb-stack-lg pt-8 border-t border-white/5">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">Key Capabilities</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-card rounded-xl p-6 flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-lg shrink-0">
+<span class="material-symbols-outlined text-secondary">photo_camera</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-2">Photo Editing</h4>
+<p class="text-on-surface-variant text-sm">Advanced retouching, color correction, and non-destructive adjustments to perfect your raw photography.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-lg shrink-0">
+<span class="material-symbols-outlined text-secondary">design_services</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-2">Graphic Design</h4>
+<p class="text-on-surface-variant text-sm">Combine typography, shapes, and images to create posters, packaging, and digital marketing materials.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-lg shrink-0">
+<span class="material-symbols-outlined text-secondary">brush</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-2">Digital Art</h4>
+<p class="text-on-surface-variant text-sm">Extensive brush engines and tablet support for digital painting, illustration, and sketching.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-lg shrink-0">
+<span class="material-symbols-outlined text-secondary">layers</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-2">Image Manipulation</h4>
+<p class="text-on-surface-variant text-sm">Complex masking and compositing tools to seamlessly blend multiple images into surreal masterpieces.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-lg shrink-0">
+<span class="material-symbols-outlined text-secondary">auto_awesome</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-2">AI Creative Tools</h4>
+<p class="text-on-surface-variant text-sm">Generative Fill and Expand powered by Adobe Firefly to intelligently add, remove, or replace elements.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-6 flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-lg shrink-0">
+<span class="material-symbols-outlined text-secondary">view_agenda</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-2">Layer-based Design</h4>
+<p class="text-on-surface-variant text-sm">The foundational system that allows endless iterations, blending modes, and non-destructive workflows.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Practical Workflows -->
+<section class="mb-stack-lg pt-8 border-t border-white/5">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">Practical Workflows</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-card rounded-xl p-8">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Professional Photo Editing</h4>
+<p class="text-on-surface-variant text-sm">From fashion shoots to landscape photography, professionals rely on Camera Raw for initial processing, followed by precise dodging and burning, frequency separation, and color grading within Photoshop's layer ecosystem.</p>
+</div>
+<div class="glass-card rounded-xl p-8">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Digital Painting</h4>
+<p class="text-on-surface-variant text-sm">Illustrators utilize custom brushes and powerful stylus pressure support to create concept art, matte paintings, and intricate illustrations, treating the digital canvas just like physical media.</p>
+</div>
+<div class="glass-card rounded-xl p-8">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Social Media Design</h4>
+<p class="text-on-surface-variant text-sm">Marketers quickly create compelling thumbnails, stories, and feed posts using text tools, shape layers, and smart objects to build reusable templates that maintain brand consistency.</p>
+</div>
+<div class="glass-card rounded-xl p-8">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">AI-powered Image Creation</h4>
+<p class="text-on-surface-variant text-sm">Concept designers use Generative Fill to rapidly prototype ideas, extend backgrounds to fit specific aspect ratios, or seamlessly remove unwanted elements without manual cloning.</p>
+</div>
+</div>
+</section>
+<!-- 4. Pros and Cons -->
+<section class="mb-stack-lg pt-8 border-t border-white/5">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">Pros and Cons</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-card rounded-xl p-8 border-t-4 border-t-secondary/50">
+<h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">add_circle</span> Pros
+            </h4>
+<ul class="space-y-3 text-on-surface-variant text-sm">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary/70 shrink-0">check</span>
+<span>Incredibly powerful, deep feature set unmatched by competitors.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary/70 shrink-0">check</span>
+<span>The universal industry-standard format (.PSD) across creative agencies.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary/70 shrink-0">check</span>
+<span>Seamless ecosystem integration with Illustrator, Premiere Pro, and Lightroom.</span>
+</li>
+</ul>
+</div>
+<div class="glass-card rounded-xl p-8 border-t-4 border-t-error/50">
+<h4 class="font-bold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-error">remove_circle</span> Cons
+            </h4>
+<ul class="space-y-3 text-on-surface-variant text-sm">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-error/70 shrink-0">close</span>
+<span>Steep learning curve for absolute beginners.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-error/70 shrink-0">close</span>
+<span>Ongoing subscription required (Adobe Creative Cloud).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-error/70 shrink-0">close</span>
+<span>High hardware requirements for complex, multi-layered or AI tasks.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 5. Pricing Overview -->
+<section class="mb-stack-lg pt-8 border-t border-white/5">
+<div class="glass-panel rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Pricing Overview</h2>
+<p class="text-on-surface-variant max-w-xl">Adobe Photoshop is available exclusively through Adobe's Creative Cloud subscription model. A free trial is available for new users to test the full feature set before committing.</p>
+<div class="flex items-center gap-4 mt-4">
+<span class="bg-secondary/10 text-secondary font-mono-sm px-3 py-1 rounded-full border border-secondary/20">Free Trial</span>
+<span class="bg-surface-variant text-on-surface-variant font-mono-sm px-3 py-1 rounded-full border border-white/5">Subscription Model</span>
+</div>
+</div>
+<div class="shrink-0">
+<a class="secondary-ghost-btn text-on-surface font-label-md font-bold px-6 py-3 rounded-lg flex items-center gap-2" href="#">
+                View Current Pricing <span class="material-symbols-outlined">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 6. Is It Right For You? -->
+<section class="mb-stack-lg pt-8 border-t border-white/5">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">Is it right for you?</h2>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container text-on-surface text-sm px-4 py-2 rounded-lg border border-white/10">Graphic Designers</span>
+<span class="bg-surface-container text-on-surface text-sm px-4 py-2 rounded-lg border border-white/10">Photographers</span>
+<span class="bg-surface-container text-on-surface text-sm px-4 py-2 rounded-lg border border-white/10">Digital Artists</span>
+<span class="bg-surface-container text-on-surface text-sm px-4 py-2 rounded-lg border border-white/10">Marketers</span>
+</div>
+<div class="glass-card rounded-xl p-6 border-l-4 border-l-secondary">
+<p class="text-on-surface-variant">If you intend to work professionally in design or photography, learning Photoshop is almost mandatory. However, if you only need quick edits for social media or basic photo adjustments, the subscription cost and complexity might be overkill, and alternatives might better suit your needs.</p>
+</div>
+</section>
+<!-- 7. Photoshop vs Alternatives -->
+<section class="mb-stack-lg pt-8 border-t border-white/5">
+<div class="flex items-center justify-between mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Photoshop vs Alternatives</h2>
+<a class="text-primary hover:text-primary-fixed flex items-center gap-1 font-label-md transition-colors" href="#">Compare Software <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card rounded-xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer">
+<h4 class="font-bold text-on-surface mb-2">CorelDRAW</h4>
+<p class="text-on-surface-variant text-sm mb-4">Stronger focus on vector illustration and page layout.</p>
+<span class="text-primary text-sm font-medium">Compare →</span>
+</div>
+<div class="glass-card rounded-xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer">
+<h4 class="font-bold text-on-surface mb-2">Canva</h4>
+<p class="text-on-surface-variant text-sm mb-4">Easier, template-driven alternative for quick social media graphics.</p>
+<span class="text-primary text-sm font-medium">Compare →</span>
+</div>
+<div class="glass-card rounded-xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer">
+<h4 class="font-bold text-on-surface mb-2">Affinity Photo</h4>
+<p class="text-on-surface-variant text-sm mb-4">Powerful, affordable one-time purchase alternative without a subscription.</p>
+<span class="text-primary text-sm font-medium">Compare →</span>
+</div>
+<div class="glass-card rounded-xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer">
+<h4 class="font-bold text-on-surface mb-2">Adobe Express</h4>
+<p class="text-on-surface-variant text-sm mb-4">Adobe's lighter, web-based tool for rapid content creation.</p>
+<span class="text-primary text-sm font-medium">Compare →</span>
+</div>
+</div>
+</section>
+<!-- 8. You Might Also Need -->
+<section class="mb-stack-lg pt-8 border-t border-white/5">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">You Might Also Need</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="glass-card rounded-lg p-4 flex items-center gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="w-10 h-10 bg-surface rounded flex items-center justify-center shrink-0 border border-white/5">
+<span class="material-symbols-outlined text-on-surface-variant">design_services</span>
+</div>
+<span class="font-medium text-on-surface text-sm">Figma</span>
+</div>
+<div class="glass-card rounded-lg p-4 flex items-center gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="w-10 h-10 bg-surface rounded flex items-center justify-center shrink-0 border border-white/5">
+<span class="material-symbols-outlined text-on-surface-variant">draw</span>
+</div>
+<span class="font-medium text-on-surface text-sm">Illustrator</span>
+</div>
+<div class="glass-card rounded-lg p-4 flex items-center gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="w-10 h-10 bg-surface rounded flex items-center justify-center shrink-0 border border-white/5">
+<span class="material-symbols-outlined text-on-surface-variant">movie</span>
+</div>
+<span class="font-medium text-on-surface text-sm">Premiere Pro</span>
+</div>
+<div class="glass-card rounded-lg p-4 flex items-center gap-3 hover:bg-surface-container transition-colors cursor-pointer">
+<div class="w-10 h-10 bg-surface rounded flex items-center justify-center shrink-0 border border-white/5">
+<span class="material-symbols-outlined text-on-surface-variant">camera</span>
+</div>
+<span class="font-medium text-on-surface text-sm">Lightroom</span>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="section-spacing"></div>
+<!-- Final CTA Section -->
+<section class="glass-panel rounded-2xl p-12 text-center relative overflow-hidden mb-section-spacing">
+<div class="absolute inset-0 bg-gradient-to-b from-primary-container/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Ready to explore Adobe Photoshop?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                    Start your creative journey today with the industry's most powerful imaging software.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="primary-gradient-btn text-white font-label-md text-label-md font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2" href="#">
+                        Visit Official Website <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="secondary-ghost-btn text-on-surface font-label-md text-label-md font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2" href="#">
+                        Compare Alternatives
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (From JSON) -->
+<footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-white/5 mt-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-gutter px-margin-desktop max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<div class="col-span-2 lg:col-span-2 flex flex-col gap-4">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Tech Soul</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    © 2024 Tech Soul. All rights reserved.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-on-surface font-bold font-label-md text-label-md mb-2">Platform</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Software</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Categories</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Compare</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-on-surface font-bold font-label-md text-label-md mb-2">Knowledge</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Blueprints</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Resources</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-on-surface font-bold font-label-md text-label-md mb-2">Company</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Legal</a>
+</div>
+</div>
+</footer>
+
+</Layout>
