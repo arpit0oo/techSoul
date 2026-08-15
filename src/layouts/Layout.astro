@@ -123,33 +123,132 @@ const {
     };
   </script>
 
-  <!-- Base global styles -->
+  <!-- Base global V2 styles -->
   <style>
     body {
-      background-color: #15121b;
+      background-color: #0D1117;
       color: #e8dfee;
       margin: 0;
       padding: 0;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
+
     .glass-panel {
       background: rgba(22, 27, 34, 0.7);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
+
     .glass-card {
       background: #161B22;
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
     }
+
     .glass-card:hover {
       transform: scale(1.02);
       border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.1);
     }
+
+    .primary-gradient-text {
+      background: linear-gradient(135deg, #7C3AED, #06B6D4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #d2bbff, #4cd7f6);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #d2bbff 0%, #4cd7f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, #7C3AED, #06B6D4);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.2);
+    }
+
+    .primary-btn:hover {
+      background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+      box-shadow: 0 8px 30px rgba(124, 58, 237, 0.3);
+    }
+
+    .primary-gradient-btn {
+      background: linear-gradient(135deg, #7c3aed 0%, #03b5d3 100%);
+      box-shadow: 0 8px 32px rgba(124, 58, 237, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .primary-gradient-btn:hover {
+      background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+      box-shadow: 0 12px 40px rgba(124, 58, 237, 0.3);
+    }
+
+    .secondary-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .secondary-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .secondary-ghost-btn {
+      background: transparent;
+      border: 1px solid #8B949E;
+      transition: all 0.3s ease;
+    }
+
+    .secondary-ghost-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .glow-shadow {
+      box-shadow: 0 0 30px rgba(124, 58, 237, 0.2);
+    }
+
+    .input-glow:focus-within {
+      border-color: #7C3AED;
+      box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+    }
+
+    .section-spacing {
+      margin-top: 128px;
+      margin-bottom: 128px;
+    }
+
+    @media (max-width: 768px) {
+      .section-spacing {
+        margin-top: 80px;
+        margin-bottom: 80px;
+      }
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .material-symbols-outlined[data-weight="fill"] {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
   </style>
 

@@ -1,29 +1,136 @@
----
-import Layout from '../../../layouts/Layout.astro';
-
-const pageStyles = `
-  .glass-panel {
-    @apply bg-surface/70 backdrop-blur-[20px] border border-white/10;
-  }
-  .glow-shadow {
-    box-shadow: 0 0 30px rgba(124,58,237,0.2);
-  }
-  .text-gradient {
-    background: linear-gradient(to right, #d2bbff, #4cd7f6);
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
-  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-`;
----
-
-<Layout
-  title="Creative &amp; Design Software - Tech Soul"
-  description="Discover the tools that bring imagination to life. From pixel-perfect UI design to professional photo manipulation."
-  pageStyles={pageStyles}
->
-
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Creative &amp; Design Software - Tech Soul</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#15121b",
+                        "secondary-fixed": "#acedff",
+                        "on-secondary-fixed": "#001f26",
+                        "error-container": "#93000a",
+                        "surface-bright": "#3c3742",
+                        "surface-variant": "#37333e",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "surface-container": "#221e28",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "on-tertiary": "#4f2500",
+                        "inverse-on-surface": "#332f39",
+                        "surface-container-low": "#1d1a24",
+                        "on-secondary": "#003640",
+                        "surface-container-high": "#2c2833",
+                        "secondary": "#4cd7f6",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#ffb784",
+                        "on-background": "#e8dfee",
+                        "surface-tint": "#d2bbff",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "background": "#15121b",
+                        "on-tertiary-container": "#ffe0cd",
+                        "on-primary": "#3f008e",
+                        "on-surface-variant": "#ccc3d8",
+                        "tertiary-fixed": "#ffdcc6",
+                        "outline": "#958da1",
+                        "primary-fixed": "#eaddff",
+                        "on-primary-fixed": "#25005a",
+                        "on-tertiary-fixed": "#301400",
+                        "primary": "#d2bbff",
+                        "primary-container": "#7c3aed",
+                        "surface-container-highest": "#37333e",
+                        "secondary-container": "#03b5d3",
+                        "on-secondary-container": "#00424e",
+                        "surface-dim": "#15121b",
+                        "surface-container-lowest": "#100d16",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-primary-container": "#ede0ff",
+                        "on-error": "#690005",
+                        "inverse-primary": "#732ee4",
+                        "outline-variant": "#4a4455",
+                        "on-surface": "#e8dfee",
+                        "tertiary-container": "#a15100",
+                        "inverse-surface": "#e8dfee",
+                        "primary-fixed-dim": "#d2bbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "stack-lg": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "mono-sm": ["Geist"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "mono-sm": ["12px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(21, 18, 27, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-shadow {
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #d2bbff, #4cd7f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-white">
 <!-- TopNavBar (Shared Component) -->
 <nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
@@ -36,9 +143,9 @@ const pageStyles = `
             </a>
 <!-- Desktop Navigation -->
 <div class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Discover</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#" href="/">Discover</a>
 <a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Industries</a>
-<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Blueprints</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#" href="/blueprint">Blueprints</a>
 <!-- Active State Logic Applied Here: Software -->
 <a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 duration-100 flex items-center gap-1" href="#">
                     Software
@@ -67,7 +174,7 @@ const pageStyles = `
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-md mt-4">
 <nav class="flex text-on-surface-variant font-label-md text-label-md">
 <ol class="flex items-center space-x-2">
-<li class=""><a class="hover:text-primary transition-colors" href="#">Software</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#" href="/software">Software</a></li>
 <li><span class="material-symbols-outlined text-sm mx-1 opacity-50" data-icon="chevron_right">chevron_right</span></li>
 <li aria-current="page" class="text-primary font-medium">Creative &amp; Design</li>
 </ol>
@@ -743,14 +850,14 @@ const pageStyles = `
 <!-- Column 1 -->
 <div class="flex flex-col gap-3">
 <h4 class="font-label-md text-label-md font-bold text-on-surface">Product</h4>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Software</a>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#" href="/software">Software</a>
 <a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Categories</a>
 <a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Compare</a>
 </div>
 <!-- Column 2 -->
 <div class="flex flex-col gap-3">
 <h4 class="font-label-md text-label-md font-bold text-on-surface">Resources</h4>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Blueprints</a>
+<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#" href="/blueprint">Blueprints</a>
 <a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Resources</a>
 </div>
 <!-- Column 3 -->
@@ -776,5 +883,4 @@ const pageStyles = `
 </div>
 </footer>
 </main>
-
-</Layout>
+</body></html>
