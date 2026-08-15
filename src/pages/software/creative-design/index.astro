@@ -1,3 +1,7 @@
+---
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+---
 <!DOCTYPE html><html class="dark" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -131,50 +135,14 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-white">
-<!-- TopNavBar (Shared Component) -->
-<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<!-- Brand Logo -->
-<a class="text-headline-md font-headline-md font-bold text-on-surface dark:text-on-surface flex items-center gap-2 group" href="#">
-<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-surface font-black group-hover:glow-shadow transition-shadow">
-                    TS
-                </div>
-                Tech Soul
-            </a>
-<!-- Desktop Navigation -->
-<div class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#" href="/">Discover</a>
-<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Industries</a>
-<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#" href="/blueprint">Blueprints</a>
-<!-- Active State Logic Applied Here: Software -->
-<a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 duration-100 flex items-center gap-1" href="#">
-                    Software
-                </a>
-<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">AI Tools</a>
-<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="#">Resources</a>
-</div>
-<!-- Actions -->
-<div class="flex items-center gap-4">
-<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container">
-<span class="material-symbols-outlined" data-icon="search">search</span>
-</button>
-<button class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container text-white font-headline-md text-label-md font-bold hover:brightness-110 glow-shadow transition-all active:scale-95 duration-100">
-                    Compare
-                </button>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden text-on-surface-variant p-2">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
-</button>
-</div>
-</div>
-</nav>
+<Navbar />
 <!-- Main Content Canvas -->
 <main class="pt-[88px] min-h-screen">
 <!-- Breadcrumbs -->
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-md mt-4">
 <nav class="flex text-on-surface-variant font-label-md text-label-md">
 <ol class="flex items-center space-x-2">
-<li class=""><a class="hover:text-primary transition-colors" href="#" href="/software">Software</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="/software">Software</a></li>
 <li><span class="material-symbols-outlined text-sm mx-1 opacity-50" data-icon="chevron_right">chevron_right</span></li>
 <li aria-current="page" class="text-primary font-medium">Creative &amp; Design</li>
 </ol>
@@ -832,55 +800,6 @@
 </div>
 </div>
 </section>
-<!-- FOOTER (Shared Component) -->
-<footer class="w-full bg-surface-container dark:bg-surface-container border-t border-white/5">
-<div class="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto gap-8">
-<!-- Brand Info -->
-<div class="flex flex-col gap-4">
-<a class="font-headline-md text-headline-md font-bold text-on-surface flex items-center gap-2" href="#">
-<div class="w-6 h-6 rounded bg-gradient-to-br from-primary to-secondary"></div>
-                        Tech Soul
-                    </a>
-<p class="font-label-md text-label-md text-on-surface-variant max-w-xs">
-                        Empowering digital creators with the tools to build the future.
-                    </p>
-</div>
-<!-- Footer Links Grid -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full md:w-auto">
-<!-- Column 1 -->
-<div class="flex flex-col gap-3">
-<h4 class="font-label-md text-label-md font-bold text-on-surface">Product</h4>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#" href="/software">Software</a>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Categories</a>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Compare</a>
-</div>
-<!-- Column 2 -->
-<div class="flex flex-col gap-3">
-<h4 class="font-label-md text-label-md font-bold text-on-surface">Resources</h4>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#" href="/blueprint">Blueprints</a>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Resources</a>
-</div>
-<!-- Column 3 -->
-<div class="flex flex-col gap-3">
-<h4 class="font-label-md text-label-md font-bold text-on-surface">Company</h4>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">About</a>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
-</div>
-<!-- Column 4 -->
-<div class="flex flex-col gap-3">
-<h4 class="font-label-md text-label-md font-bold text-on-surface">Legal</h4>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
-</div>
-</div>
-</div>
-<div class="border-t border-white/5">
-<div class="px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto text-center md:text-left">
-<p class="font-label-md text-label-md text-on-surface-variant opacity-60">
-                        © 2024 Tech Soul. All rights reserved.
-                    </p>
-</div>
-</div>
-</footer>
+<Footer />
 </main>
 </body></html>

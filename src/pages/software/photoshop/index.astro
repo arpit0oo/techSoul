@@ -1,3 +1,7 @@
+---
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+---
 <!DOCTYPE html><html class="dark" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -221,31 +225,7 @@
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
-<!-- TopNavBar (From JSON) -->
-<nav class="bg-background/70 backdrop-blur-xl border-b border-white/5 shadow-primary/20 shadow-2xl fixed top-0 w-full z-50 h-20">
-<div class="flex justify-between items-center h-full px-margin-desktop max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
-<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight" href="#">Tech Soul</a>
-<div class="hidden md:flex items-center gap-6">
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#" href="/">Discover</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Industries</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#" href="/blueprint">Blueprints</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 transition-transform px-3 py-2" href="#" href="/software">Software</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#">AI Tools</a>
-<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 px-3 py-2 rounded-lg" href="#">Resources</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="text-on-surface-variant hover:text-on-surface">
-<span class="material-symbols-outlined">search</span>
-</button>
-<a class="hidden md:inline-flex primary-gradient-btn text-white font-label-md text-label-md font-bold px-6 py-3 rounded-lg items-center justify-center" href="#">
-                    Get Started
-                </a>
-<button class="md:hidden text-on-surface-variant">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</nav>
+<Navbar />
 <!-- Main Content -->
 <main class="flex-grow pt-28 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full pb-section-spacing">
 <!-- Breadcrumbs -->
@@ -556,31 +536,5 @@
 </div>
 </section>
 </main>
-<!-- Footer (From JSON) -->
-<footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-white/5 mt-auto">
-<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-gutter px-margin-desktop max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
-<div class="col-span-2 lg:col-span-2 flex flex-col gap-4">
-<span class="font-headline-md text-headline-md font-bold text-on-surface">Tech Soul</span>
-<p class="font-body-md text-body-md text-on-surface-variant">
-                    © 2024 Tech Soul. All rights reserved.
-                </p>
-</div>
-<div class="flex flex-col gap-3">
-<span class="text-on-surface font-bold font-label-md text-label-md mb-2">Platform</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#" href="/software">Software</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Categories</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Compare</a>
-</div>
-<div class="flex flex-col gap-3">
-<span class="text-on-surface font-bold font-label-md text-label-md mb-2">Knowledge</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#" href="/blueprint">Blueprints</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Resources</a>
-</div>
-<div class="flex flex-col gap-3">
-<span class="text-on-surface font-bold font-label-md text-label-md mb-2">Company</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">About</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors hover:underline transition-all" href="#">Legal</a>
-</div>
-</div>
-</footer>
+<Footer />
 </body></html>

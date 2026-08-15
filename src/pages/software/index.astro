@@ -1,3 +1,7 @@
+---
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+---
 <!DOCTYPE html><html class="dark" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -113,28 +117,7 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl dark:bg-surface/70 border-b border-white/5 shadow-primary/20 shadow-2xl">
-<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
-<div class="flex items-center gap-8">
-<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight hover:text-primary transition-colors duration-300" href="#">Tech Soul</a>
-<div class="hidden md:flex gap-6 items-center">
-<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#" href="/">Discover</a>
-<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Industries</a>
-<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#" href="/blueprint">Blueprints</a>
-<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1 scale-95 transition-transform duration-200" href="#" href="/software">Software</a>
-<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">AI Tools</a>
-<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Resources</a>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<button class="text-on-surface hover:text-primary transition-colors duration-300">
-<span class="material-symbols-outlined" data-icon="search">search</span>
-</button>
-<button class="hidden md:block bg-gradient-to-r from-primary-container to-secondary-container text-white font-label-md text-label-md px-6 py-2 rounded-lg font-bold hover:brightness-110 transition-all shadow-[0_0_15px_rgba(124,58,237,0.3)]">Compare</button>
-</div>
-</div>
-</nav>
+<Navbar />
 <main class="flex-grow pt-32 pb-margin-desktop">
 <!-- Hero Section -->
 <section class="max-w-container-max mx-auto px-gutter mb-stack-lg text-center mt-12 relative">
@@ -259,36 +242,7 @@
 </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-stack-lg border-t border-white/5">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md px-gutter max-w-container-max mx-auto">
-<div class="col-span-1 md:col-span-1">
-<div class="font-headline-md text-headline-md font-bold text-on-surface mb-4">Tech Soul</div>
-<p class="font-body-md text-body-md text-outline">© 2024 Tech Soul. Premium Software Discovery.</p>
-</div>
-<div>
-<ul class="space-y-3 font-body-md text-body-md">
-<li><a class="text-outline hover:text-secondary transition-colors" href="#" href="/software">Software</a></li>
-<li><a class="text-outline hover:text-secondary transition-colors" href="#">Categories</a></li>
-<li><a class="text-outline hover:text-secondary transition-colors" href="#">Compare</a></li>
-</ul>
-</div>
-<div>
-<ul class="space-y-3 font-body-md text-body-md">
-<li><a class="text-outline hover:text-secondary transition-colors" href="#" href="/blueprint">Blueprints</a></li>
-<li><a class="text-outline hover:text-secondary transition-colors" href="#">Resources</a></li>
-<li><a class="text-outline hover:text-secondary transition-colors" href="#">About</a></li>
-</ul>
-</div>
-<div>
-<ul class="space-y-3 font-body-md text-body-md">
-<li><a class="text-outline hover:text-secondary transition-colors" href="#">Contact</a></li>
-<li><a class="text-outline hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-outline hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
-</ul>
-</div>
-</div>
-</footer>
+<Footer />
 <script>
   (function () {
     var input = document.getElementById('sw-search-input');
